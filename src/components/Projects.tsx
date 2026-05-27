@@ -106,7 +106,7 @@ export default function Projects() {
   const [hoveredIndex, setHoveredIndex] = useState<string | null>(null);
 
   return (
-    <section id="projects" className="max-w-5xl mx-auto px-4 sm:px-6 md:px-12 relative z-10 scroll-mt-24 sm:scroll-mt-28">
+    <section id="projects" className="max-w-5xl mx-auto px-4 sm:px-6 md:px-12 relative z-10 scroll-mt-24 sm:scroll-mt-28 gpu-stable">
       <motion.div
         initial={{ opacity: 0, y: 35 }}
         whileInView={{ opacity: 1, y: 0 }}

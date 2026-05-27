@@ -67,7 +67,7 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="max-w-5xl mx-auto px-4 sm:px-6 md:px-12 relative z-10 scroll-mt-24 sm:scroll-mt-28">
+    <section id="experience" className="max-w-5xl mx-auto px-4 sm:px-6 md:px-12 relative z-10 scroll-mt-24 sm:scroll-mt-28 gpu-stable">
       <motion.div
         initial={{ opacity: 0, y: 35 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -77,20 +77,20 @@ export default function Experience() {
       >
         {/* Section Header - Left-aligned for mobile and desktop */}
         <div className="flex flex-col items-start text-left space-y-2.5 pl-1 sm:pl-0 w-full max-w-full">
-          <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-[#FF3B3B] uppercase">
+          <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-accent-red uppercase">
             <Briefcase size={14} className="animate-pulse" />
             <span>03 / MILESTONES & ROADMAP</span>
           </div>
           
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-sans font-extrabold tracking-tight text-soft-white leading-tight">
-            Experience & <span className="bg-gradient-to-r from-[#FF3B3B] to-neon bg-clip-text text-transparent">Achievements</span>
+            Experience & <span className="bg-linear-to-r from-accent-red to-neon bg-clip-text text-transparent">Achievements</span>
           </h2>
           
           <p className="font-mono text-[11px] sm:text-xs md:text-sm text-soft-white tracking-wide max-w-xl leading-relaxed">
             Hands-on experience building AI-powered applications, scalable backend systems, and modern software solutions.
           </p>
           
-          <div className="h-0.5 w-20 bg-gradient-to-r from-[#FF3B3B] to-transparent mt-1" />
+          <div className="h-0.5 w-20 bg-linear-to-r from-accent-red to-transparent mt-1" />
         </div>
 
         {/* Left / Main Column: Interactive Timeline */}
@@ -110,7 +110,7 @@ export default function Experience() {
                   className="relative pl-6 sm:pl-16 group"
                 >
                   {/* Timeline Glow Indicator Bulb */}
-                  <div className={`absolute left-0 sm:left-4 top-2 w-[18px] h-[18px] rounded-full bg-[#050505] border-2 flex items-center justify-center transition-all duration-300 group-hover:scale-125 ${
+                  <div className={`absolute left-0 sm:left-4 top-2 w-[18px] h-[18px] rounded-full bg-matte border-2 flex items-center justify-center transition-all duration-300 group-hover:scale-125 ${
                     exp.type === 'hackathon' 
                       ? 'border-neon group-hover:border-neon group-hover:shadow-[0_0_10px_#00ff9c]' 
                       : 'border-accent-red group-hover:border-accent-red group-hover:shadow-[0_0_10px_#ff3b3b]'
@@ -177,7 +177,7 @@ export default function Experience() {
                       </div>
 
                       {/* Telemetry/Indicator status */}
-                      <div className="flex items-center gap-2 px-2.5 py-1 rounded bg-white/[0.02] border border-white/5">
+                      <div className="flex items-center gap-2 px-2.5 py-1 rounded bg-white/2 border border-white/5">
                         <span className={`w-2 h-2 rounded-full ${exp.indicator.color} animate-pulse`} />
                         <span className="font-mono text-[9px] text-soft-white/60 uppercase tracking-widest">{exp.indicator.label}:</span>
                         <span className="font-mono text-[9px] text-soft-white font-semibold">{exp.indicator.status}</span>

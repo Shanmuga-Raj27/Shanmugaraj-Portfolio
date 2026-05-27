@@ -32,7 +32,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className="relative w-full flex items-center justify-center pt-[120px] pb-[60px] px-4 sm:px-6 md:px-12 z-10 overflow-hidden">
+    <section id="hero" className="relative w-full flex items-center justify-center pt-[120px] pb-[60px] px-4 sm:px-6 md:px-12 z-10 overflow-hidden gpu-stable">
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
         
         {/* Left Column: Bio and CTA Buttons inside dedicated premium card/wrapper */}
@@ -40,14 +40,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-5 md:space-y-8 p-6 sm:p-10"
-          style={{
-            background: 'rgba(0,0,0,0.25)',
-            border: '1px solid rgba(255,255,255,0.05)',
-            borderRadius: '24px',
-            backdropFilter: 'blur(8px)',
-            WebkitBackdropFilter: 'blur(8px)'
-          }}
+          className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-5 md:space-y-8 p-6 sm:p-10 hero-glass-card gpu-stable"
         >
           {/* Greeting Tag */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-neon/10 border border-neon/20 text-[10px] sm:text-xs font-mono font-medium text-neon tracking-wider uppercase animate-pulse">
@@ -89,7 +82,7 @@ export default function Hero() {
             <a 
               href="#projects" 
               onClick={(e) => handleScrollClick(e, '#projects')}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white text-matte font-mono text-xs uppercase tracking-wider font-semibold border border-white hover:bg-transparent hover:text-white transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white text-matte font-mono text-xs uppercase tracking-wider font-semibold border border-white hover:bg-transparent hover:text-white transition-all duration-300 ease-in-out group"
             >
               <span>View Projects</span>
               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
@@ -98,7 +91,7 @@ export default function Hero() {
             <a 
               href="#contact" 
               onClick={(e) => handleScrollClick(e, '#contact')}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-transparent border border-white/10 text-soft-white font-mono text-xs uppercase tracking-wider font-semibold hover:border-neon hover:bg-neon/5 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-transparent border border-white/10 text-soft-white font-mono text-xs uppercase tracking-wider font-semibold hover:border-neon hover:bg-neon/5 transition-all duration-300 ease-in-out"
             >
               <span>Contact Me</span>
             </a>
@@ -107,7 +100,7 @@ export default function Hero() {
               href={import.meta.env.VITE_RESUME_LINK} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[#0A66C2] hover:bg-[#0077B5] text-white font-mono text-xs uppercase tracking-wider font-semibold border border-transparent shadow-[0_4px_12px_rgba(10,102,194,0.16)] hover:shadow-[0_4px_16px_rgba(10,102,194,0.25)] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:scale-[1.02] active:scale-[0.98]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[#0A66C2] hover:bg-[#0077B5] text-white font-mono text-xs uppercase tracking-wider font-semibold border border-transparent shadow-[0_4px_12px_rgba(10,102,194,0.16)] hover:shadow-[0_4px_16px_rgba(10,102,194,0.25)] transition-all duration-300 ease-in-out hover:scale-[1.02] active:scale-[0.98]"
             >
               <FileText size={14} />
               <span>Resume</span>

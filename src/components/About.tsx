@@ -12,7 +12,7 @@ const highlights = [
 
 export default function About() {
   return (
-    <section id="about" className="max-w-4xl mx-auto px-4 sm:px-6 md:px-12 relative z-10 animate-fade-in scroll-mt-24 sm:scroll-mt-28">
+    <section id="about" className="max-w-4xl mx-auto px-4 sm:px-6 md:px-12 relative z-10 animate-fade-in scroll-mt-24 sm:scroll-mt-28 gpu-stable">
       <motion.div
         initial={{ opacity: 0, y: 35 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -28,20 +28,20 @@ export default function About() {
           </div>
           
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-sans font-extrabold tracking-tight text-soft-white leading-tight">
-            About <span className="bg-gradient-to-r from-neon via-deep-green to-neon bg-[length:200%_auto] bg-clip-text text-transparent animate-[shimmer_5s_infinite_linear]">Me</span>
+            About <span className="bg-linear-to-r from-neon via-deep-green to-neon bg-size-[200%_auto] bg-clip-text text-transparent animate-[shimmer_5s_infinite_linear]">Me</span>
           </h2>
           
           <p className="font-mono text-[11px] sm:text-xs md:text-sm text-soft-white tracking-wide leading-relaxed">
             BSc Computer Science Graduate • Python Full Stack & AI Developer
           </p>
           
-          <div className="h-0.5 w-20 bg-gradient-to-r from-neon to-transparent mt-1" />
+          <div className="h-0.5 w-20 bg-linear-to-r from-neon to-transparent mt-1" />
         </div>
 
         {/* Unified Premium Card for Entire Body Section Background */}
         <div className="bg-zinc-900/95 backdrop-blur-md p-4 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl relative overflow-hidden border border-white/10 hover:border-neon/30 transition-all duration-300 shadow-2xl">
           {/* Distinctive background gradients */}
-          <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-neon via-deep-green to-transparent" />
+          <div className="absolute top-0 left-0 w-1.5 h-full bg-linear-to-b from-neon via-deep-green to-transparent" />
           <div className="absolute top-0 right-0 w-24 h-24 bg-neon/5 blur-3xl rounded-full pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-32 h-32 bg-accent-red/5 blur-3xl rounded-full pointer-events-none" />
           

@@ -39,7 +39,7 @@ export default function Background() {
   }, [isMobile]);
 
   return (
-    <div className="fixed inset-0 z-[-1] pointer-events-none w-full h-full overflow-hidden transform-gpu">
+    <div className="fixed inset-0 z-[-1] pointer-events-none w-full h-full overflow-hidden gpu-stable">
       {/* Matte black deep space background */}
       <div className="absolute inset-0 bg-matte" />
       
@@ -49,18 +49,18 @@ export default function Background() {
       {/* Ambient color blobs - Professional green and red accents */}
       {/* Reduced blur and disabled infinite pulsing loops on mobile to save layout repaints */}
       <div 
-        className={`absolute top-[10%] left-[10%] w-[300px] h-[300px] md:w-[450px] md:h-[450px] bg-deep-green/[0.02] blur-[80px] md:blur-[130px] rounded-full pointer-events-none transform-gpu ${
+        className={`absolute top-[10%] left-[10%] w-[300px] h-[300px] md:w-[450px] md:h-[450px] bg-deep-green/2 blur-[80px] md:blur-[130px] rounded-full pointer-events-none transform-gpu ${
           isMobile ? '' : 'animate-pulse'
         }`} 
         style={isMobile ? undefined : { animationDuration: '8s' }} 
       />
       <div 
-        className={`absolute bottom-[20%] right-[5%] w-[350px] h-[350px] md:w-[500px] md:h-[500px] bg-accent-red/[0.01] blur-[90px] md:blur-[140px] rounded-full pointer-events-none transform-gpu ${
+        className={`absolute bottom-[20%] right-[5%] w-[350px] h-[350px] md:w-[500px] md:h-[500px] bg-accent-red/1 blur-[90px] md:blur-[140px] rounded-full pointer-events-none transform-gpu ${
           isMobile ? '' : 'animate-pulse'
         }`} 
         style={isMobile ? undefined : { animationDuration: '12s' }} 
       />
-      <div className="absolute top-[60%] left-[60%] w-[250px] h-[250px] md:w-[350px] md:h-[350px] bg-neon/[0.01] blur-[70px] md:blur-[110px] rounded-full pointer-events-none transform-gpu" />
+      <div className="absolute top-[60%] left-[60%] w-[250px] h-[250px] md:w-[350px] md:h-[350px] bg-neon/1 blur-[70px] md:blur-[110px] rounded-full pointer-events-none transform-gpu" />
 
       {/* Star Particles */}
       {stars.map((star) => (

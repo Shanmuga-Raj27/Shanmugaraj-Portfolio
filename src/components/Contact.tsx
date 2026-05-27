@@ -90,7 +90,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="max-w-5xl mx-auto px-4 sm:px-6 md:px-12 relative z-10 py-16 md:py-24 scroll-mt-24 sm:scroll-mt-28">
+    <section id="contact" className="max-w-5xl mx-auto px-4 sm:px-6 md:px-12 relative z-10 py-16 md:py-24 scroll-mt-24 sm:scroll-mt-28 gpu-stable">
       <motion.div
         initial={{ opacity: 0, y: 35 }}
         whileInView={{ opacity: 1, y: 0 }}
