@@ -106,14 +106,14 @@ export default function Contact() {
           </div>
           
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-sans font-extrabold tracking-tight text-soft-white leading-tight">
-            Contact <span className="bg-gradient-to-r from-neon to-[#00b36c] bg-clip-text text-transparent">Me</span>
+            Contact <span className="bg-linear-to-r from-neon to-[#00b36c] bg-clip-text text-transparent">Me</span>
           </h2>
           
           <p className="font-mono text-[11px] sm:text-xs md:text-sm text-soft-white tracking-wide max-w-xl leading-relaxed">
             Open to internships, freelance opportunities, collaborations, and full-time software engineering roles.
           </p>
           
-          <div className="h-0.5 w-20 bg-gradient-to-r from-neon to-transparent mt-1" />
+          <div className="h-0.5 w-20 bg-linear-to-r from-neon to-transparent mt-1" />
         </div>
 
         {/* Two-Column Responsive Grid Layout */}
@@ -136,7 +136,7 @@ export default function Contact() {
                     <Mail size={18} />
                   </div>
                   <div className="space-y-1 min-w-0">
-                    <span className="font-mono text-[9px] text-[#FF3B3B] tracking-widest uppercase block font-semibold">EMAIL GATEWAY</span>
+                    <span className="font-mono text-[9px] text-accent-red tracking-widest uppercase block font-semibold">EMAIL GATEWAY</span>
                     <a href="mailto:rshanmugaraj11@gmail.com" className="font-sans text-xs sm:text-sm text-soft-white font-medium hover:text-neon transition-colors block truncate">
                       rshanmugaraj11@gmail.com
                     </a>
@@ -159,7 +159,7 @@ export default function Contact() {
                     <Phone size={18} />
                   </div>
                   <div className="space-y-1 min-w-0">
-                    <span className="font-mono text-[9px] text-[#FF3B3B] tracking-widest uppercase block font-semibold">PHONE ENCRYPTED</span>
+                    <span className="font-mono text-[9px] text-accent-red tracking-widest uppercase block font-semibold">PHONE ENCRYPTED</span>
                     <a href="tel:+919041648197" className="font-sans text-xs sm:text-sm text-soft-white font-medium hover:text-neon transition-colors block truncate">
                       +91 9041648197
                     </a>
@@ -176,7 +176,7 @@ export default function Contact() {
               </div>
 
               {/* Interactive Info footer panel with replies statistic */}
-              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 flex items-start gap-3">
+              <div className="p-4 rounded-xl bg-white/2 border border-white/5 flex items-start gap-3">
                 <Clock size={16} className="text-neon/80 mt-0.5 animate-pulse shrink-0" />
                 <div className="space-y-0.5">
                   <p className="font-sans text-xs text-soft-white font-semibold">Responsive SLA</p>
@@ -198,7 +198,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <a
-                  href="https://drive.google.com/drive/folders/dummy-resume-shanmugaraj"
+                  href={import.meta.env.VITE_RESUME_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#0A66C2] hover:bg-[#0077b5] text-white font-mono text-[10.5px] uppercase tracking-wider font-bold shadow-[0_3px_10px_rgba(10,102,194,0.2)] hover:shadow-[0_4px_18px_rgba(10,102,194,0.4)] transition-all duration-300 hover:scale-[1.03] active:scale-95 shrink-0"
@@ -257,7 +257,7 @@ export default function Contact() {
                   >
                     <div className="flex items-center gap-2 mb-2">
                       <Sparkles size={14} className="text-neon" />
-                      <h4 className="font-mono text-xs tracking-widest text-[#FF3B3B] uppercase font-bold">
+                      <h4 className="font-mono text-xs tracking-widest text-accent-red uppercase font-bold">
                         SECURE TRANSMISSION ENVELOPE
                       </h4>
                     </div>
@@ -275,7 +275,7 @@ export default function Contact() {
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                           placeholder="Your Name (e.g. John Doe)"
-                          className="w-full bg-[#050505] border border-white/15 focus:border-neon rounded-xl py-3 px-4 text-xs sm:text-sm text-soft-white placeholder:text-platinum/50 outline-none transition-all focus:shadow-[0_0_15px_rgba(0,255,156,0.12)]"
+                          className="w-full bg-matte border border-white/15 focus:border-neon rounded-xl py-3 px-4 text-xs sm:text-sm text-soft-white placeholder:text-platinum/50 outline-none transition-all focus:shadow-[0_0_15px_rgba(0,255,156,0.12)]"
                         />
                       </div>
                     </div>
@@ -293,7 +293,7 @@ export default function Contact() {
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           placeholder="your.email@example.com"
-                          className="w-full bg-[#050505] border border-white/15 focus:border-neon rounded-xl py-3 px-4 text-xs sm:text-sm text-soft-white placeholder:text-platinum/50 outline-none transition-all focus:shadow-[0_0_15px_rgba(0,255,156,0.12)]"
+                          className="w-full bg-matte border border-white/15 focus:border-neon rounded-xl py-3 px-4 text-xs sm:text-sm text-soft-white placeholder:text-platinum/50 outline-none transition-all focus:shadow-[0_0_15px_rgba(0,255,156,0.12)]"
                         />
                       </div>
                     </div>
@@ -311,7 +311,7 @@ export default function Contact() {
                           value={formData.message}
                           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                           placeholder="Write your project details or recruitment inquiry here..."
-                          className="w-full bg-[#050505] border border-white/15 focus:border-neon rounded-xl py-3 px-4 text-xs sm:text-sm text-soft-white placeholder:text-platinum/50 outline-none resize-none transition-all focus:shadow-[0_0_15px_rgba(0,255,156,0.12)]"
+                          className="w-full bg-matte border border-white/15 focus:border-neon rounded-xl py-3 px-4 text-xs sm:text-sm text-soft-white placeholder:text-platinum/50 outline-none resize-none transition-all focus:shadow-[0_0_15px_rgba(0,255,156,0.12)]"
                         />
                       </div>
                     </div>
@@ -332,7 +332,7 @@ export default function Contact() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-white text-zinc-950 hover:bg-neon hover:text-zinc-900 disabled:opacity-50 text-xs font-mono font-bold uppercase tracking-widest transition-all duration-300 select-none block"
+                      className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-white text-zinc-950 hover:bg-neon hover:text-zinc-900 disabled:opacity-50 text-xs font-mono font-bold uppercase tracking-widest transition-all duration-300 select-none"
                     >
                       {isSubmitting ? (
                         <>
@@ -369,7 +369,7 @@ export default function Contact() {
                       </p>
                     </div>
 
-                    <div className="p-3 rounded-lg bg-white/[0.02] border border-white/5 font-mono text-[10px] text-platinum/95 uppercase tracking-wider">
+                    <div className="p-3 rounded-lg bg-white/2 border border-white/5 font-mono text-[10px] text-platinum/95 uppercase tracking-wider">
                       Reference ID: #SMR-{Math.floor(100000 + Math.random() * 900000)}
                     </div>
 

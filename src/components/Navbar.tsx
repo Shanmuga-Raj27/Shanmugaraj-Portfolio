@@ -37,16 +37,15 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-[#050505]/85 backdrop-blur-md border-b border-white/5 py-3 sm:py-4' 
-          : 'bg-transparent py-4 sm:py-6'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+        ? 'bg-matte/85 backdrop-blur-md border-b border-white/5 py-3 sm:py-4'
+        : 'bg-transparent py-4 sm:py-6'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 flex items-center justify-between">
         {/* Brand Logo - Minimal Modern SaaS representation */}
-        <a 
-          href="#hero" 
+        <a
+          href="#hero"
           onClick={(e) => handleNavClick(e, '#hero')}
           className="flex items-center gap-2 group cursor-pointer"
         >
@@ -72,19 +71,12 @@ export default function Navbar() {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-neon transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
-          <a
-            href="#contact"
-            onClick={(e) => handleNavClick(e, '#contact')}
-            className="px-5 py-2 rounded-md bg-white/5 hover:bg-neon/10 text-xs font-mono text-soft-white hover:text-neon border border-white/10 hover:border-neon/30 transition-all duration-300 uppercase tracking-widest"
-          >
-            Connect
-          </a>
         </nav>
 
         {/* Mobile Toggle Button (44x44px minimum touch area) */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden w-11 h-11 flex items-center justify-center text-platinum hover:text-neon focus:outline-none transition-colors border border-transparent hover:border-white/5 rounded-lg bg-white/[0.02] active:bg-white/[0.08]"
+          className="md:hidden w-11 h-11 flex items-center justify-center text-platinum hover:text-neon focus:outline-none transition-colors border border-transparent hover:border-white/5 rounded-lg bg-white/2 active:bg-white/8"
           aria-label="Toggle Menu"
         >
           {isOpen ? <X size={20} /> : <Menu size={20} />}
@@ -107,18 +99,11 @@ export default function Navbar() {
                   key={item.name}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="text-xs font-mono text-platinum hover:text-neon tracking-widest uppercase transition-all duration-200 py-3 px-4 rounded-xl bg-white/[0.02] border border-white/5 active:bg-white/10 block font-semibold"
+                  className="text-xs font-mono text-platinum hover:text-neon tracking-widest uppercase transition-all duration-200 py-3 px-4 rounded-xl bg-white/2 border border-white/5 active:bg-white/10 block font-semibold"
                 >
                   {item.name}
                 </a>
               ))}
-              <a
-                href="#contact"
-                onClick={(e) => handleNavClick(e, '#contact')}
-                className="mt-2 w-full text-center py-3.5 rounded-xl bg-neon/15 hover:bg-neon/25 text-[#00ff9c] font-mono text-xs uppercase tracking-widest font-extrabold border border-neon/40 active:scale-98 transition-all duration-300"
-              >
-                Connect
-              </a>
             </div>
           </motion.div>
         )}

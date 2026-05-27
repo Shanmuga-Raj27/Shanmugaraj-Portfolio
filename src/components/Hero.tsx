@@ -60,7 +60,7 @@ export default function Hero() {
 
           {/* Animated Glowing Gradient text for Role */}
           <div className="relative">
-            <h2 className="text-base sm:text-2xl md:text-4xl font-mono font-bold tracking-tight bg-gradient-to-r from-neon via-deep-green to-neon bg-[length:200%_auto] bg-clip-text text-transparent animate-[shimmer_5s_infinite_linear] inline-block glow-neon-text leading-tight">
+            <h2 className="text-base sm:text-2xl md:text-4xl font-mono font-bold tracking-tight bg-linear-to-r from-neon via-deep-green to-neon bg-size-[200%_auto] bg-clip-text text-transparent animate-[shimmer_5s_infinite_linear] inline-block glow-neon-text leading-tight">
               Python Full Stack & AI Developer
             </h2>
           </div>
@@ -90,7 +90,7 @@ export default function Hero() {
             </a>
 
             <a 
-              href="https://drive.google.com/drive/folders/dummy-resume-shanmugaraj" 
+              href={import.meta.env.VITE_RESUME_LINK} 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[#0A66C2] hover:bg-[#0077B5] text-white font-mono text-xs uppercase tracking-wider font-semibold border border-transparent shadow-[0_4px_15px_rgba(10,102,194,0.3)] hover:shadow-[0_4px_22px_rgba(10,102,194,0.55)] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
@@ -120,13 +120,6 @@ export default function Hero() {
             >
               <Linkedin size={16} />
             </a>
-            <a 
-              href="mailto:rshanmugaraj11@gmail.com"
-              className="p-3 rounded-full bg-white/5 border border-white/5 hover:border-neon/40 text-platinum hover:text-accent-red transition-all duration-300 shadow-md active:scale-95"
-              aria-label="Send Email"
-            >
-              <Mail size={16} />
-            </a>
           </div>
         </motion.div>
 
@@ -143,7 +136,7 @@ export default function Hero() {
           {/* Main Rounded Profile Box Container */}
           <div className="relative z-10 w-64 h-64 md:w-80 md:h-80 rounded-full border-2 border-neon/40 p-1 overflow-hidden bg-[#0d0d0d] group flex items-center justify-center shadow-2xl transition-all duration-500 hover:border-neon">
             {/* Ambient inner soft glowing backdrop */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-deep-green/10 via-matte to-accent-red/5" />
+            <div className="absolute inset-0 bg-linear-to-tr from-deep-green/10 via-matte to-accent-red/5" />
             
             {!imageFailed ? (
               <img
@@ -185,7 +178,7 @@ export default function Hero() {
           <motion.div 
             animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 0.5 }}
-            className="hidden sm:flex absolute bottom-[15%] left-[0%] md:left-[5%] z-20 items-center gap-2 px-3.5 py-2 rounded-xl bg-[#0d0d0d]/80 backdrop-blur-md border border-white/5 hover:border-[#00C97B]/30 shadow-lg cursor-default"
+            className="hidden sm:flex absolute bottom-[15%] left-[0%] md:left-[5%] z-20 items-center gap-2 px-3.5 py-2 rounded-xl bg-[#0d0d0d]/80 backdrop-blur-md border border-white/5 hover:border-deep-green/30 shadow-lg cursor-default"
           >
             <div className="w-2 h-2 rounded-full bg-teal-400" />
             <span className="font-mono text-xs text-soft-white">FastAPI</span>
@@ -195,7 +188,7 @@ export default function Hero() {
           <motion.div 
             animate={{ y: [0, -12, 0] }}
             transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 1 }}
-            className="hidden sm:flex absolute top-[20%] right-[0%] md:right-[5%] z-20 items-center gap-2 px-3.5 py-2 rounded-xl bg-[#0d0d0d]/80 backdrop-blur-md border border-white/5 hover:border-[#00FF9C]/30 shadow-lg cursor-default"
+            className="hidden sm:flex absolute top-[20%] right-[0%] md:right-[5%] z-20 items-center gap-2 px-3.5 py-2 rounded-xl bg-[#0d0d0d]/80 backdrop-blur-md border border-white/5 hover:border-neon/30 shadow-lg cursor-default"
           >
             <div className="w-2 h-2 rounded-full bg-cyan-400" />
             <span className="font-mono text-xs text-soft-white font-medium">React</span>
@@ -215,7 +208,7 @@ export default function Hero() {
       </div>
 
       {/* Smooth Scroll Indicator Bar */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-muted-gray hover:text-[#00FF9C] transition-colors duration-200">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-muted-gray hover:text-neon transition-colors duration-200">
         <a 
           href="#about" 
           onClick={(e) => handleScrollClick(e, '#about')}
