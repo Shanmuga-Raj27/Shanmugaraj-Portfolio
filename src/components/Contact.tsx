@@ -51,7 +51,12 @@ export default function Contact() {
     setErrorMessage(null);
     
     try {
-      const response = await fetch("https://formspree.io/f/mwvzrzld", {
+      const formEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
+      if (!formEndpoint) {
+        throw new Error("Form endpoint configuration is missing. Please contact directly via email.");
+      }
+
+      const response = await fetch(formEndpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
