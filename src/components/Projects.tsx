@@ -122,26 +122,24 @@ export default function Projects() {
           </div>
           
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-sans font-extrabold tracking-tight text-soft-white select-none leading-tight">
-            Featured <span className="bg-gradient-to-r from-[#00ff9c] to-[#00b36c] bg-clip-text text-transparent">Projects</span>
+            Featured <span className="bg-linear-to-r from-[#00ff9c] to-[#00b36c] bg-clip-text text-transparent">Projects</span>
           </h2>
           
           <p className="font-mono text-[11px] sm:text-xs md:text-sm text-soft-white tracking-wide max-w-2xl leading-relaxed">
             Real-world AI-powered and full-stack applications focused on scalability, backend engineering, intelligent automation, and modern user experiences.
           </p>
           
-          <div className="h-0.5 w-20 bg-gradient-to-r from-neon to-transparent mt-1" />
+          <div className="h-0.5 w-20 bg-linear-to-r from-neon to-transparent mt-1" />
         </div>
 
         {/* Project cards responsive matching grid */}
         <motion.div 
-          layout
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           <AnimatePresence mode="popLayout">
             {projects.map((project) => (
               <motion.div
                 key={project.id}
-                layout
                 initial={{ opacity: 0, scale: 0.92 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.92 }}
@@ -151,7 +149,7 @@ export default function Projects() {
                 className="bg-zinc-900/95 backdrop-blur-md rounded-2xl p-5 sm:p-6 md:p-8 border border-neon/20 hover:border-neon/60 transition-all duration-500 flex flex-col justify-between hover:shadow-[0_0_25px_rgba(0,255,156,0.08)] relative overflow-hidden group"
               >
                 {/* Embedded background subtle gradient overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-b ${project.accentGlow} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                <div className={`absolute inset-0 bg-linear-to-b ${project.accentGlow} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
 
                 <div>
                   {/* Category Pill Tag */}
