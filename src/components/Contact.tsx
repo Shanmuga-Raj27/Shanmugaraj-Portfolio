@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Mail, 
@@ -19,6 +19,18 @@ import {
 } from 'lucide-react';
 
 export default function Contact() {
+  const [activeCardId, setActiveCardId] = useState<string | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   // Clipboard copying states
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [copiedPhone, setCopiedPhone] = useState(false);
@@ -90,12 +102,20 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="max-w-5xl mx-auto px-4 sm:px-6 md:px-12 relative z-10 py-16 md:py-24 scroll-mt-24 sm:scroll-mt-28 gpu-stable">
+    <section id="contact" className="w-full max-w-5xl lg:max-w-6xl xl:max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10 py-16 md:py-24 scroll-mt-24 sm:scroll-mt-28 gpu-stable">
       <motion.div
-        initial={{ opacity: 0, y: 35 }}
+        initial={{ opacity: 0, y: isMobile ? 0 : 35 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-20px" }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
+        viewport={{ once: true, margin: isMobile ? "-10px" : "-20px" }}
+        transition={{ duration: isMobile ? 0.45 : 0.7, ease: "easeOut" }}
+        style={{ 
+          willChange: "transform, opacity", 
+          transform: "translate3d(0,0,0)",
+          backfaceVisibility: "hidden",
+          WebkitBackfaceVisibility: "hidden",
+          perspective: "1000px",
+          WebkitPerspective: "1000px"
+        }}
         className="space-y-12"
       >
         {/* Section Header - Left-aligned for mobile and desktop */}
@@ -124,20 +144,31 @@ export default function Contact() {
             
             <div className="space-y-4">
               {/* Dynamic Availability status badge */}
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-neon/10 border border-neon/20 text-neon font-mono text-[10px] uppercase tracking-wider font-semibold self-start mb-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-neon/10 border border-neon/20 text-neon font-mono text-[10px] lg:text-xs uppercase tracking-wider font-semibold self-start mb-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-neon animate-ping" />
                 <span>Available for new projects</span>
               </div>
 
               {/* Email Glassmorphism Card */}
-              <div className="bg-zinc-900/95 backdrop-blur-md rounded-2xl p-4 sm:p-6 border border-white/5 hover:border-neon/30 hover:shadow-[0_0_20px_rgba(0,255,156,0.04)] transition-all duration-300 group flex items-center justify-between gap-4">
+              <div 
+                onMouseEnter={() => setActiveCardId('email')}
+                onMouseLeave={() => setActiveCardId(null)}
+                onPointerEnter={() => setActiveCardId('email')}
+                onPointerLeave={() => setActiveCardId(null)}
+                onPointerMove={() => setActiveCardId('email')}
+                onMouseMove={() => setActiveCardId('email')}
+                onTouchStart={() => setActiveCardId('email')}
+                onTouchEnd={() => setActiveCardId(null)}
+                onTouchCancel={() => setActiveCardId(null)}
+                className={`bg-zinc-900/95 backdrop-blur-md rounded-2xl p-4 sm:p-6 border flex items-center justify-between gap-4 glow-card ${activeCardId === 'email' ? 'is-active-glow border-neon/60 shadow-[0_0_25px_rgba(0,255,156,0.12)]' : 'border-white/5'}`}
+              >
                 <div className="flex items-center gap-4 min-w-0">
                   <div className="p-3 rounded-xl bg-white/5 border border-white/10 group-hover:bg-neon/10 group-hover:border-neon/30 transition-all text-neon shrink-0">
                     <Mail size={18} />
                   </div>
                   <div className="space-y-1 min-w-0">
-                    <span className="font-mono text-[9px] text-accent-red tracking-widest uppercase block font-semibold">EMAIL GATEWAY</span>
-                    <a href="mailto:rshanmugaraj11@gmail.com" className="font-sans text-xs sm:text-sm text-soft-white font-medium hover:text-neon transition-colors block truncate">
+                    <span className="font-mono text-[9px] lg:text-[11px] text-accent-red tracking-widest uppercase block font-semibold">EMAIL GATEWAY</span>
+                    <a href="mailto:rshanmugaraj11@gmail.com" className="font-sans text-xs sm:text-sm lg:text-base text-soft-white font-medium hover:text-neon transition-colors block truncate">
                       rshanmugaraj11@gmail.com
                     </a>
                   </div>
@@ -153,14 +184,25 @@ export default function Contact() {
               </div>
 
               {/* Phone Info Card */}
-              <div className="bg-zinc-900/95 backdrop-blur-md rounded-2xl p-4 sm:p-6 border border-white/5 hover:border-neon/30 hover:shadow-[0_0_20px_rgba(0,255,156,0.04)] transition-all duration-300 group flex items-center justify-between gap-4">
+              <div 
+                onMouseEnter={() => setActiveCardId('phone')}
+                onMouseLeave={() => setActiveCardId(null)}
+                onPointerEnter={() => setActiveCardId('phone')}
+                onPointerLeave={() => setActiveCardId(null)}
+                onPointerMove={() => setActiveCardId('phone')}
+                onMouseMove={() => setActiveCardId('phone')}
+                onTouchStart={() => setActiveCardId('phone')}
+                onTouchEnd={() => setActiveCardId(null)}
+                onTouchCancel={() => setActiveCardId(null)}
+                className={`bg-zinc-900/95 backdrop-blur-md rounded-2xl p-4 sm:p-6 border flex items-center justify-between gap-4 glow-card ${activeCardId === 'phone' ? 'is-active-glow border-neon/60 shadow-[0_0_25px_rgba(0,255,156,0.12)]' : 'border-white/5'}`}
+              >
                 <div className="flex items-center gap-4 min-w-0">
                   <div className="p-3 rounded-xl bg-white/5 border border-white/10 group-hover:bg-neon/10 group-hover:border-neon/30 transition-all text-neon shrink-0">
                     <Phone size={18} />
                   </div>
                   <div className="space-y-1 min-w-0">
-                    <span className="font-mono text-[9px] text-accent-red tracking-widest uppercase block font-semibold">PHONE ENCRYPTED</span>
-                    <a href="tel:+919041648197" className="font-sans text-xs sm:text-sm text-soft-white font-medium hover:text-neon transition-colors block truncate">
+                    <span className="font-mono text-[9px] lg:text-[11px] text-accent-red tracking-widest uppercase block font-semibold">PHONE ENCRYPTED</span>
+                    <a href="tel:+919041648197" className="font-sans text-xs sm:text-sm lg:text-base text-soft-white font-medium hover:text-neon transition-colors block truncate">
                       +91 9041648197
                     </a>
                   </div>
@@ -179,22 +221,33 @@ export default function Contact() {
               <div className="p-4 rounded-xl bg-white/2 border border-white/5 flex items-start gap-3">
                 <Clock size={16} className="text-neon/80 mt-0.5 animate-pulse shrink-0" />
                 <div className="space-y-0.5">
-                  <p className="font-sans text-xs text-soft-white font-semibold">Responsive SLA</p>
-                  <p className="font-sans text-[11px] text-platinum leading-normal">
+                  <p className="font-sans text-xs lg:text-sm text-soft-white font-semibold">Responsive SLA</p>
+                  <p className="font-sans text-[11px] lg:text-xs text-platinum leading-normal">
                     Usually replies within 24 hours. Directly accessible via Slack or official communication handles.
                   </p>
                 </div>
               </div>
 
               {/* Professional LinkedIn-blue Resume Download Card */}
-              <div className="bg-[#0A66C2]/10 backdrop-blur-md rounded-2xl p-4 border border-[#0A66C2]/35 hover:border-[#0A66C2]/70 hover:shadow-[0_0_20px_rgba(10,102,194,0.15)] transition-all duration-300 flex items-center justify-between gap-4">
+              <div 
+                onMouseEnter={() => setActiveCardId('resume')}
+                onMouseLeave={() => setActiveCardId(null)}
+                onPointerEnter={() => setActiveCardId('resume')}
+                onPointerLeave={() => setActiveCardId(null)}
+                onPointerMove={() => setActiveCardId('resume')}
+                onMouseMove={() => setActiveCardId('resume')}
+                onTouchStart={() => setActiveCardId('resume')}
+                onTouchEnd={() => setActiveCardId(null)}
+                onTouchCancel={() => setActiveCardId(null)}
+                className={`bg-[#0A66C2]/10 backdrop-blur-md rounded-2xl p-4 border flex items-center justify-between gap-4 glow-card ${activeCardId === 'resume' ? 'is-active-glow blue' : 'border-[#0A66C2]/35'}`}
+              >
                 <div className="flex items-center gap-3.5 min-w-0">
                   <div className="p-3 rounded-xl bg-[#0A66C2]/20 border border-[#0A66C2]/30 text-white shrink-0 shadow-[0_0_10px_rgba(10,102,194,0.25)]">
                     <FileText size={18} />
                   </div>
                   <div className="min-w-0">
-                    <span className="font-mono text-[9px] text-white/70 tracking-widest uppercase block font-semibold">VERIFIED CV</span>
-                    <span className="font-sans text-xs sm:text-sm text-soft-white font-semibold">Curriculum Vitae</span>
+                    <span className="font-mono text-[9px] lg:text-[11px] text-white/70 tracking-widest uppercase block font-semibold">VERIFIED CV</span>
+                    <span className="font-sans text-xs sm:text-sm lg:text-base text-soft-white font-semibold">Curriculum Vitae</span>
                   </div>
                 </div>
                 <a

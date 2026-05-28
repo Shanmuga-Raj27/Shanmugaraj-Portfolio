@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { 
   Briefcase, 
@@ -22,7 +22,7 @@ const experiences = [
     title: 'Full-Stack Developer',
     organization: 'Google PromptWar Hackathon (Virtual)',
     period: 'Apr 2026',
-    accentColor: 'border-neon/30 hover:border-neon text-neon',
+    accentColor: 'border-neon/30 text-neon',
     badgeText: 'Hackathon Competitor',
     badgeColor: 'bg-neon/10 text-neon border-neon/20',
     icon: Terminal,
@@ -44,7 +44,7 @@ const experiences = [
     title: 'AI/ML Data Analytics Intern',
     organization: 'Edunet Foundation (AICTE & Shell)',
     period: 'Jun 2025 – Jul 2025',
-    accentColor: 'border-[#FF3B3B]/30 hover:border-[#FF3B3B] text-[#FF3B3B]',
+    accentColor: 'border-[#FF3B3B]/30 text-[#FF3B3B]',
     badgeText: 'Technical Internship',
     badgeColor: 'bg-[#FF3B3B]/10 text-[#FF3B3B] border-[#FF3B3B]/20',
     icon: Brain,
@@ -66,13 +66,33 @@ const experiences = [
 
 
 export default function Experience() {
+  const [activeCardId, setActiveCardId] = useState<string | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
-    <section id="experience" className="max-w-5xl mx-auto px-4 sm:px-6 md:px-12 relative z-10 scroll-mt-24 sm:scroll-mt-28 gpu-stable">
+    <section id="experience" className="w-full max-w-5xl lg:max-w-6xl xl:max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10 scroll-mt-24 sm:scroll-mt-28 gpu-stable">
       <motion.div
-        initial={{ opacity: 0, y: 35 }}
+        initial={{ opacity: 0, y: isMobile ? 0 : 35 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-20px" }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
+        viewport={{ once: true, margin: isMobile ? "-10px" : "-20px" }}
+        transition={{ duration: isMobile ? 0.45 : 0.7, ease: "easeOut" }}
+        style={{ 
+          willChange: "transform, opacity", 
+          transform: "translate3d(0,0,0)",
+          backfaceVisibility: "hidden",
+          WebkitBackfaceVisibility: "hidden",
+          perspective: "1000px",
+          WebkitPerspective: "1000px"
+        }}
         className="space-y-12"
       >
         {/* Section Header - Left-aligned for mobile and desktop */}
@@ -100,6 +120,7 @@ export default function Experience() {
 
             {experiences.map((exp, idx) => {
               const Icon = exp.icon;
+              const isActive = activeCardId === exp.organization;
               return (
                 <motion.div
                   key={exp.organization}
@@ -110,10 +131,10 @@ export default function Experience() {
                   className="relative pl-6 sm:pl-16 group"
                 >
                   {/* Timeline Glow Indicator Bulb */}
-                  <div className={`absolute left-0 sm:left-4 top-2 w-[18px] h-[18px] rounded-full bg-matte border-2 flex items-center justify-center transition-all duration-300 group-hover:scale-125 ${
+                  <div className={`absolute left-0 sm:left-4 top-2 w-[18px] h-[18px] rounded-full bg-matte border-2 flex items-center justify-center transition-all duration-300 ${isActive ? 'scale-125' : ''} ${
                     exp.type === 'hackathon' 
-                      ? 'border-neon group-hover:border-neon group-hover:shadow-[0_0_10px_#00ff9c]' 
-                      : 'border-accent-red group-hover:border-accent-red group-hover:shadow-[0_0_10px_#ff3b3b]'
+                      ? `border-neon ${isActive ? 'shadow-[0_0_10px_#00ff9c]' : ''}` 
+                      : `border-accent-red ${isActive ? 'shadow-[0_0_10px_#ff3b3b]' : ''}`
                   }`}>
                     <div className={`w-1.5 h-1.5 rounded-full ${
                       exp.type === 'hackathon' ? 'bg-neon' : 'bg-accent-red'
@@ -121,32 +142,43 @@ export default function Experience() {
                   </div>
 
                   {/* Experience Card Background - Dark Gray Solid Background for maximum contrast */}
-                  <div className={`bg-zinc-900/95 backdrop-blur-md rounded-2xl p-4 sm:p-6 md:p-8 border ${exp.accentColor} transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,10,0,0.4)]`}>
+                  <div 
+                    onMouseEnter={() => setActiveCardId(exp.organization)}
+                    onMouseLeave={() => setActiveCardId(null)}
+                    onPointerEnter={() => setActiveCardId(exp.organization)}
+                    onPointerLeave={() => setActiveCardId(null)}
+                    onPointerMove={() => setActiveCardId(exp.organization)}
+                    onMouseMove={() => setActiveCardId(exp.organization)}
+                    onTouchStart={() => setActiveCardId(exp.organization)}
+                    onTouchEnd={() => setActiveCardId(null)}
+                    onTouchCancel={() => setActiveCardId(null)}
+                    className={`bg-zinc-900/95 backdrop-blur-md rounded-2xl p-4 sm:p-6 md:p-8 border ${exp.accentColor} glow-card ${isActive ? `is-active-glow ${exp.type === 'internship' ? 'red' : ''}` : ''}`}
+                  >
                     
                     {/* Header Row */}
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
                       <div className="space-y-1">
-                        <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full border text-[10px] font-mono uppercase tracking-wider font-semibold ${exp.badgeColor}`}>
+                        <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full border text-[10px] lg:text-xs font-mono uppercase tracking-wider font-semibold ${exp.badgeColor}`}>
                           <Award size={10} />
                           {exp.badgeText}
                         </span>
-                        <h3 className="text-lg sm:text-xl font-sans font-extrabold text-soft-white tracking-tight mt-1 group-hover:text-neon transition-colors duration-300">
+                        <h3 className="text-lg sm:text-xl lg:text-2xl font-sans font-extrabold text-soft-white tracking-tight mt-1 group-hover:text-neon transition-colors duration-300">
                           {exp.title}
                         </h3>
-                        <p className="font-mono text-xs text-soft-white/80 font-medium">
+                        <p className="font-mono text-xs lg:text-sm text-soft-white/80 font-medium">
                           {exp.organization}
                         </p>
                       </div>
 
                       {/* Period Badge */}
-                      <div className="flex items-center gap-1.5 text-xs font-mono text-soft-white bg-white/5 border border-white/10 px-3 py-1.5 rounded-xl self-start sm:self-center">
+                      <div className="flex items-center gap-1.5 text-xs lg:text-sm font-mono text-soft-white bg-white/5 border border-white/10 px-3 py-1.5 rounded-xl self-start sm:self-center">
                         <Calendar size={12} className="text-neon" />
                         <span>{exp.period}</span>
                       </div>
                     </div>
 
                     {/* Sub description */}
-                    <p className="text-xs sm:text-sm text-platinum font-sans font-light leading-relaxed mb-4 border-l-2 border-white/10 pl-3">
+                    <p className="text-xs sm:text-sm lg:text-base text-platinum font-sans font-light leading-relaxed mb-4 border-l-2 border-white/10 pl-3">
                       {exp.desc}
                     </p>
 
@@ -155,7 +187,7 @@ export default function Experience() {
                       {exp.points.map((point, pIdx) => (
                         <li 
                           key={pIdx} 
-                          className="flex items-start gap-2.5 text-xs sm:text-sm text-platinum font-sans font-light leading-relaxed"
+                          className="flex items-start gap-2.5 text-xs sm:text-sm lg:text-[15px] text-platinum font-sans font-light leading-relaxed"
                         >
                           <CheckCircle2 size={14} className="text-neon mt-0.5 shrink-0" />
                           <span>{point}</span>

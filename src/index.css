@@ -101,4 +101,58 @@
       -webkit-backdrop-filter: blur(4px);
     }
   }
+
+  /* Context-Aware Interactive Fallbacks (Desktop Hover vs. Mobile Touch) */
+  .glow-card {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, border-color, box-shadow, background-color, opacity;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+  }
+
+  .opacity-glow {
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity;
+  }
+
+  .glow-card.is-active-glow {
+    border-color: rgba(0, 255, 156, 0.5) !important;
+    box-shadow: 0 0 25px rgba(0, 255, 156, 0.08) !important;
+    transform: translateY(-4px) translate3d(0,0,0) scale(1.01) !important;
+  }
+
+  /* Red glow variant for technical internship */
+  .glow-card.is-active-glow.red {
+    border-color: rgba(255, 59, 59, 0.5) !important;
+    box-shadow: 0 0 25px rgba(255, 59, 59, 0.08) !important;
+  }
+
+  /* Blue glow variant for resume */
+  .glow-card.is-active-glow.blue {
+    border-color: rgba(10, 102, 194, 0.5) !important;
+    box-shadow: 0 0 25px rgba(10, 102, 194, 0.08) !important;
+  }
+
+  .glow-card.is-active-glow .opacity-glow {
+    opacity: 1 !important;
+  }
+
+  @media (max-width: 768px) {
+    .glow-card {
+      transition: transform 0.2s cubic-bezier(0.4,0,0.2,1),
+                  border-color 0.2s cubic-bezier(0.4,0,0.2,1),
+                  box-shadow 0.2s cubic-bezier(0.4,0,0.2,1),
+                  background-color 0.2s cubic-bezier(0.4,0,0.2,1);
+    }
+    .glow-card.is-active-glow {
+      transform: scale(0.98) translate3d(0,0,0) !important;
+    }
+    .glow-card.is-active-glow .opacity-glow {
+      opacity: 0.5 !important;
+    }
+  }
 }
