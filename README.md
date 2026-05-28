@@ -1,7 +1,7 @@
 
 # Shanmugaraj Rajkumar | Portfolio
 
-> A high-performance, visually stunning developer portfolio showcasing modern full-stack web engineering, custom AI integrations, and responsive user experiences.
+> A high-performance, visually stunning developer portfolio showcasing modern full-stack web engineering and responsive user experiences.
 
 🚀 **Live Deployment URL:** [https://shanmugaraj-portfolio-eight.vercel.app/](https://shanmugaraj-portfolio-eight.vercel.app/)
 
