@@ -121,7 +121,7 @@ export default function Projects() {
         initial={{ opacity: 0, y: isMobile ? 0 : 35 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: isMobile ? "-10px" : "-20px" }}
-        transition={{ duration: isMobile ? 0.45 : 0.7, ease: "easeOut" }}
+        transition={{ duration: isMobile ? 0.45 : 0.7, ease: [0.4, 0, 0.2, 1] }}
         style={{ 
           willChange: "transform, opacity", 
           transform: "translate3d(0,0,0)",
@@ -163,7 +163,7 @@ export default function Projects() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.4 }}
+                  transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
                   onMouseEnter={() => setActiveCardId(project.id)}
                   onMouseLeave={() => setActiveCardId(null)}
                   onPointerEnter={() => setActiveCardId(project.id)}
@@ -268,7 +268,7 @@ export default function Projects() {
                     </div>
 
                     {/* Buttons with Modern styling */}
-                    <div className="flex items-center gap-2.5 relative z-10 pt-2 border-t border-white/5 md:border-t-0 md:pt-0">
+                    <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 relative z-10 pt-2 border-t border-white/5 md:border-t-0 md:pt-0">
                       <a
                         href={project.liveLink}
                         target="_blank"

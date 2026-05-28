@@ -107,7 +107,7 @@ export default function Contact() {
         initial={{ opacity: 0, y: isMobile ? 0 : 35 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: isMobile ? "-10px" : "-20px" }}
-        transition={{ duration: isMobile ? 0.45 : 0.7, ease: "easeOut" }}
+        transition={{ duration: isMobile ? 0.45 : 0.7, ease: [0.4, 0, 0.2, 1] }}
         style={{ 
           willChange: "transform, opacity", 
           transform: "translate3d(0,0,0)",
@@ -328,7 +328,7 @@ export default function Contact() {
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                           placeholder="Your Name (e.g. John Doe)"
-                          className="w-full bg-matte border border-white/15 focus:border-neon rounded-xl py-3 px-4 text-xs sm:text-sm text-soft-white placeholder:text-platinum/50 outline-none transition-all focus:shadow-[0_0_15px_rgba(0,255,156,0.12)]"
+                          className="w-full bg-matte border border-white/15 focus:border-neon rounded-xl py-3 px-4 text-[16px] sm:text-sm text-soft-white placeholder:text-platinum/50 outline-none transition-all focus:shadow-[0_0_15px_rgba(0,255,156,0.12)]"
                         />
                       </div>
                     </div>
@@ -346,7 +346,7 @@ export default function Contact() {
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           placeholder="your.email@example.com"
-                          className="w-full bg-matte border border-white/15 focus:border-neon rounded-xl py-3 px-4 text-xs sm:text-sm text-soft-white placeholder:text-platinum/50 outline-none transition-all focus:shadow-[0_0_15px_rgba(0,255,156,0.12)]"
+                          className="w-full bg-matte border border-white/15 focus:border-neon rounded-xl py-3 px-4 text-[16px] sm:text-sm text-soft-white placeholder:text-platinum/50 outline-none transition-all focus:shadow-[0_0_15px_rgba(0,255,156,0.12)]"
                         />
                       </div>
                     </div>
@@ -364,7 +364,7 @@ export default function Contact() {
                           value={formData.message}
                           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                           placeholder="Write your project details or recruitment inquiry here..."
-                          className="w-full bg-matte border border-white/15 focus:border-neon rounded-xl py-3 px-4 text-xs sm:text-sm text-soft-white placeholder:text-platinum/50 outline-none resize-none transition-all focus:shadow-[0_0_15px_rgba(0,255,156,0.12)]"
+                          className="w-full bg-matte border border-white/15 focus:border-neon rounded-xl py-3 px-4 text-[16px] sm:text-sm text-soft-white placeholder:text-platinum/50 outline-none resize-none transition-all focus:shadow-[0_0_15px_rgba(0,255,156,0.12)]"
                         />
                       </div>
                     </div>

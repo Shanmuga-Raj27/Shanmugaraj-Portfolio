@@ -107,14 +107,14 @@ export default function Navbar() {
           <a
             href="#hero"
             onClick={(e) => handleNavClick(e, '#hero')}
-            className="flex items-center gap-2.5 group cursor-pointer relative z-9999 min-w-0"
+            className="flex items-center gap-2.5 group cursor-pointer relative z-9999 shrink-0 transform-gpu"
           >
             <div className="relative flex items-center justify-center w-8 h-8 rounded-lg bg-white/5 border border-white/10 group-hover:border-neon/30 transition-all duration-300 shrink-0">
               <Cpu size={16} className="text-neon group-hover:rotate-45 transition-transform duration-500" />
               <div className="absolute inset-0 bg-neon/10 rounded-lg blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
             <span
-              className="font-mono tracking-wider font-semibold group-hover:text-neon transition-colors duration-300 whitespace-nowrap overflow-hidden text-ellipsis"
+              className="font-mono tracking-wider font-semibold group-hover:text-neon transition-colors duration-300 whitespace-nowrap shrink-0 transform-gpu"
               style={{ fontSize: 'clamp(14px, 3vw, 18px)' }}
             >
               SHANMUGARAJ<span className="text-neon">.</span>
@@ -199,7 +199,7 @@ export default function Navbar() {
                     <motion.a
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.04, duration: 0.25, ease: 'easeOut' }}
+                      transition={{ delay: index * 0.04, duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
                       key={item.name}
                       href={item.href}
                       onClick={(e) => handleNavClick(e, item.href)}

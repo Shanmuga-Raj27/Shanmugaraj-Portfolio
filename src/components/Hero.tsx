@@ -39,7 +39,7 @@ export default function Hero() {
         <motion.div 
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
           className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-5 md:space-y-8 p-6 sm:p-10 hero-glass-card gpu-stable"
         >
           {/* Greeting Tag */}
@@ -82,7 +82,7 @@ export default function Hero() {
             <a 
               href="#projects" 
               onClick={(e) => handleScrollClick(e, '#projects')}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white text-matte font-mono text-xs uppercase tracking-wider font-semibold border border-white hover:bg-transparent hover:text-white transition-all duration-300 ease-in-out group"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:py-3 rounded-lg bg-white text-matte font-mono text-xs uppercase tracking-wider font-semibold border border-white hover:bg-transparent hover:text-white transition-all duration-300 ease-in-out group min-h-[44px]"
             >
               <span>View Projects</span>
               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
@@ -91,7 +91,7 @@ export default function Hero() {
             <a 
               href="#contact" 
               onClick={(e) => handleScrollClick(e, '#contact')}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-transparent border border-white/10 text-soft-white font-mono text-xs uppercase tracking-wider font-semibold hover:border-neon hover:bg-neon/5 transition-all duration-300 ease-in-out"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:py-3 rounded-lg bg-transparent border border-white/10 text-soft-white font-mono text-xs uppercase tracking-wider font-semibold hover:border-neon hover:bg-neon/5 transition-all duration-300 ease-in-out min-h-[44px]"
             >
               <span>Contact Me</span>
             </a>
@@ -100,7 +100,7 @@ export default function Hero() {
               href={import.meta.env.VITE_RESUME_LINK} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[#0A66C2] hover:bg-[#0077B5] text-white font-mono text-xs uppercase tracking-wider font-semibold border border-transparent shadow-[0_4px_12px_rgba(10,102,194,0.16)] hover:shadow-[0_4px_16px_rgba(10,102,194,0.25)] transition-all duration-300 ease-in-out hover:scale-[1.02] active:scale-[0.98]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:py-3 rounded-lg bg-[#0A66C2] hover:bg-[#0077B5] text-white font-mono text-xs uppercase tracking-wider font-semibold border border-transparent shadow-[0_4px_12px_rgba(10,102,194,0.16)] hover:shadow-[0_4px_16px_rgba(10,102,194,0.25)] transition-all duration-300 ease-in-out hover:scale-[1.02] active:scale-[0.98] min-h-[44px]"
             >
               <FileText size={14} />
               <span>Resume</span>
@@ -134,7 +134,7 @@ export default function Hero() {
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1], delay: 0.2 }}
           className="lg:col-span-5 flex items-center justify-center relative py-8"
         >
           {/* Subtle Outer Neon Aura Ring */}

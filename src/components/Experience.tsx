@@ -84,7 +84,7 @@ export default function Experience() {
         initial={{ opacity: 0, y: isMobile ? 0 : 35 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: isMobile ? "-10px" : "-20px" }}
-        transition={{ duration: isMobile ? 0.45 : 0.7, ease: "easeOut" }}
+        transition={{ duration: isMobile ? 0.45 : 0.7, ease: [0.4, 0, 0.2, 1] }}
         style={{ 
           willChange: "transform, opacity", 
           transform: "translate3d(0,0,0)",
