@@ -53,11 +53,11 @@
   }
 
   .glow-neon {
-    box-shadow: 0 0 10px rgba(0, 255, 170, 0.12);
+    box-shadow: 0 0 15px rgba(0, 255, 156, 0.4);
   }
 
   .glow-neon-lg {
-    box-shadow: 0 0 16px rgba(0, 255, 170, 0.06);
+    box-shadow: 0 0 30px rgba(0, 255, 156, 0.2);
   }
 
   .glow-neon-text {
