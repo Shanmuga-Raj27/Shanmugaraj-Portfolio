@@ -29,11 +29,18 @@ export default function Navbar() {
 
   // Track scroll position to adjust navbar background blur
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (window.scrollY > 20) {
+            setScrolled(true);
+          } else {
+            setScrolled(false);
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -94,11 +101,11 @@ export default function Navbar() {
   return (
     <>
       <header
-        className="fixed top-0 left-0 right-0 z-9999 h-[72px] flex items-center gpu-stable"
+        className="fixed top-0 left-0 right-0 z-50 h-[72px] flex items-center gpu-stable"
         style={{
-          background: 'rgba(5, 5, 5, 0.82)',
-          backdropFilter: isMobile ? 'blur(6px)' : 'blur(18px)',
-          WebkitBackdropFilter: isMobile ? 'blur(6px)' : 'blur(18px)',
+          background: isMobile ? '#050505' : 'rgba(5, 5, 5, 0.82)',
+          backdropFilter: isMobile ? 'none' : 'blur(18px)',
+          WebkitBackdropFilter: isMobile ? 'none' : 'blur(18px)',
           borderBottom: '1px solid rgba(0, 255, 170, 0.08)',
         }}
       >
@@ -107,7 +114,7 @@ export default function Navbar() {
           <a
             href="#hero"
             onClick={(e) => handleNavClick(e, '#hero')}
-            className="flex items-center gap-2.5 group cursor-pointer relative z-9999 shrink-0 transform-gpu"
+            className="flex items-center gap-2.5 group cursor-pointer relative z-50 shrink-0 transform-gpu"
           >
             <div className="relative flex items-center justify-center w-8 h-8 rounded-lg bg-white/5 border border-white/10 group-hover:border-neon/30 transition-all duration-300 shrink-0">
               <Cpu size={16} className="text-neon group-hover:rotate-45 transition-transform duration-500" />
@@ -148,7 +155,7 @@ export default function Navbar() {
           {/* Mobile Toggle Button (44x44px touch area) */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden w-11 h-11 flex flex-col items-center justify-center gap-1.5 text-platinum hover:text-neon focus:outline-none transition-all duration-200 border border-white/5 rounded-lg bg-black/60 hover:scale-95 active:scale-90 relative z-9999"
+            className="md:hidden w-11 h-11 flex flex-col items-center justify-center gap-1.5 text-platinum hover:text-neon focus:outline-none transition-all duration-200 border border-white/5 rounded-lg bg-black/60 hover:scale-95 active:scale-90 relative z-50"
             aria-label="Toggle Menu"
           >
             <span
@@ -181,25 +188,25 @@ export default function Navbar() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.25, ease: 'linear' }}
               onClick={() => setIsOpen(false)}
-              className="md:hidden fixed inset-0 z-9997 bg-black/65 backdrop-blur-xs pointer-events-auto cursor-pointer"
+              className="md:hidden fixed inset-0 z-48 bg-black/65 backdrop-blur-xs pointer-events-auto cursor-pointer"
             />
 
             {/* Menu Container Layer */}
             <motion.div
-              initial={{ opacity: 0, y: -24 }}
+              initial={{ opacity: 0, y: -15 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -24 }}
-              transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-              className="md:hidden fixed top-0 left-0 right-0 max-h-[85vh] bg-matte/95 backdrop-blur-sm border-b border-white/5 rounded-b-[24px] z-9998 pt-[96px] pb-8 px-6 flex flex-col justify-between overflow-y-auto shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] gpu-stable"
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className="md:hidden fixed top-0 left-0 right-0 max-h-[85vh] bg-matte border-b border-white/5 rounded-b-[24px] z-49 pt-[96px] pb-8 px-6 flex flex-col justify-between overflow-y-auto shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] gpu-stable"
             >
               <nav className="flex flex-col w-full max-w-sm mx-auto relative z-10 py-4 gap-6">
                 {navItems.map((item, index) => {
                   const isActive = activeSection === item.href.substring(1);
                   return (
                     <motion.a
-                      initial={{ opacity: 0, y: -10 }}
+                      initial={{ opacity: 0, y: -8 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.04, duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
+                      transition={{ delay: index * 0.05, duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
                       key={item.name}
                       href={item.href}
                       onClick={(e) => handleNavClick(e, item.href)}

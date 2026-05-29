@@ -118,10 +118,10 @@ export default function Projects() {
   return (
     <section id="projects" className="w-full max-w-5xl lg:max-w-6xl xl:max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10 scroll-mt-24 sm:scroll-mt-28 gpu-stable">
       <motion.div
-        initial={{ opacity: 0, y: isMobile ? 0 : 35 }}
+        initial={{ opacity: 0, y: 15 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: isMobile ? "-10px" : "-20px" }}
-        transition={{ duration: isMobile ? 0.45 : 0.7, ease: [0.4, 0, 0.2, 1] }}
+        viewport={{ once: true, margin: "-30px" }}
+        transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
         style={{ 
           willChange: "transform, opacity", 
           transform: "translate3d(0,0,0)",
@@ -160,10 +160,10 @@ export default function Projects() {
               return (
                 <motion.div
                   key={project.id}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-30px" }}
+                  transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
                   onMouseEnter={() => setActiveCardId(project.id)}
                   onMouseLeave={() => setActiveCardId(null)}
                   onPointerEnter={() => setActiveCardId(project.id)}

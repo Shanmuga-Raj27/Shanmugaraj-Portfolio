@@ -37,9 +37,10 @@ export default function Hero() {
         
         {/* Left Column: Bio and CTA Buttons inside dedicated premium card/wrapper */}
         <motion.div 
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+          style={{ willChange: "transform, opacity" }}
           className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-5 md:space-y-8 p-6 sm:p-10 hero-glass-card gpu-stable"
         >
           {/* Greeting Tag */}
@@ -132,9 +133,10 @@ export default function Hero() {
 
         {/* Right Column: Profile representation and interactive glass elements */}
         <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1], delay: 0.2 }}
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+          style={{ willChange: "transform, opacity" }}
           className="lg:col-span-5 flex items-center justify-center relative py-8"
         >
           {/* Subtle Outer Neon Aura Ring */}

@@ -183,10 +183,10 @@ export default function Skills() {
   return (
     <section id="skills" className="w-full max-w-5xl lg:max-w-6xl xl:max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10 scroll-mt-24 sm:scroll-mt-28 overflow-hidden gpu-stable">
       <motion.div
-        initial={{ opacity: 0, y: isMobile ? 0 : 30 }}
+        initial={{ opacity: 0, y: 15 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: isMobile ? "-10px" : "-20px" }}
-        transition={{ duration: isMobile ? 0.45 : 0.7, ease: [0.4, 0, 0.2, 1] }}
+        viewport={{ once: true, margin: "-30px" }}
+        transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
         style={{ 
           willChange: "transform, opacity", 
           transform: "translate3d(0,0,0)",
@@ -307,10 +307,10 @@ export default function Skills() {
             return (
               <motion.div
                 key={category.title}
-                initial={{ opacity: 0, y: isMobile ? 0 : 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05, duration: 0.5 }}
+                viewport={{ once: true, margin: "-30px" }}
+                transition={{ delay: index * 0.08, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
                 onMouseEnter={() => setActiveCardId(category.title)}
                 onMouseLeave={() => setActiveCardId(null)}
                 onPointerEnter={() => setActiveCardId(category.title)}
