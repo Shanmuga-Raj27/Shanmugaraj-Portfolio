@@ -77,7 +77,7 @@ const projects = [
   },
   {
     id: 'stadium',
-    title: 'Google Stadium Real-Time App',
+    title: 'Nexus Stadium Real-Time App',
     liveLink: 'https://google-stadium-app.onrender.com',
     githubLink: 'https://github.com/Shanmuga-Raj27/Google-Stadium-',
     category: 'Backend & WebSockets',
