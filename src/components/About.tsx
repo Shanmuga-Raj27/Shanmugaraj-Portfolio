@@ -4,7 +4,7 @@ import { User, GraduationCap, Cpu, Code2, Flame, Award } from 'lucide-react';
 
 const highlights = [
   { text: '2026 Graduate', icon: GraduationCap, color: 'text-neon bg-neon/10 border-neon/20' },
-  { text: 'AI & Full Stack Dev', icon: Cpu, color: 'text-deep-green bg-deep-green/10 border-deep-green/20' },
+  { text: 'AI Backend Dev', icon: Cpu, color: 'text-deep-green bg-deep-green/10 border-deep-green/20' },
   { text: 'Real-world Projects', icon: Code2, color: 'text-white bg-white/5 border-white/15' },
   { text: 'Fast Learner', icon: Flame, color: 'text-accent-red bg-accent-red/10 border-accent-red/20' },
   { text: 'Problem Solver', icon: Award, color: 'text-neon bg-neon/10 border-neon/20' },
@@ -47,12 +47,12 @@ export default function About() {
             <span>01 / BACKGROUND CONTEXT</span>
           </div>
           
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-sans font-extrabold tracking-tight text-soft-white leading-tight">
+          <h2 className="text-lg sm:text-xl md:text-3xl font-sans font-extrabold tracking-tight text-soft-white leading-tight">
             About <span className="bg-linear-to-r from-neon via-deep-green to-neon bg-size-[200%_auto] bg-clip-text text-transparent animate-[shimmer_5s_infinite_linear]">Me</span>
           </h2>
           
-          <p className="font-mono text-[11px] sm:text-xs md:text-sm text-soft-white tracking-wide leading-relaxed">
-            BSc Computer Science Graduate • Python Full Stack & AI Developer
+          <p className="font-mono text-[11px] sm:text-xs md:text-[13px] text-soft-white tracking-wide leading-relaxed">
+            BSc Computer Science Graduate • AI Backend Developer
           </p>
           
           <div className="h-0.5 w-20 bg-linear-to-r from-neon to-transparent mt-1" />
@@ -69,7 +69,7 @@ export default function About() {
           onTouchStart={() => setIsActive(true)}
           onTouchEnd={() => setIsActive(false)}
           onTouchCancel={() => setIsActive(false)}
-          className={`bg-zinc-900/95 backdrop-blur-md p-4 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl relative overflow-hidden border border-white/10 glow-card shadow-2xl ${isActive ? 'is-active-glow border-neon/60 shadow-[0_0_25px_rgba(0,255,156,0.12)]' : ''}`}
+          className={`bg-zinc-900/95 backdrop-blur-md p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-3xl relative overflow-hidden border border-white/10 glow-card shadow-2xl ${isActive ? 'is-active-glow border-neon/60 shadow-[0_0_25px_rgba(0,255,156,0.12)]' : ''}`}
         >
           {/* Distinctive background gradients */}
           <div className="absolute top-0 left-0 w-1.5 h-full bg-linear-to-b from-neon via-deep-green to-transparent" />
@@ -77,15 +77,18 @@ export default function About() {
           <div className="absolute bottom-0 left-0 w-32 h-32 bg-accent-red/5 blur-3xl rounded-full pointer-events-none" />
           
           {/* Narrative Content with High-contrast Platinum Text */}
-          <div className="space-y-4 sm:space-y-6 text-platinum text-[13px] sm:text-sm md:text-base lg:text-[17px] leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed font-sans font-normal relative z-10 pl-1 md:pl-2">
+          <div className="space-y-4 sm:space-y-6 text-platinum text-[13px] sm:text-sm md:text-[13px] lg:text-[14px] leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed font-sans font-normal relative z-10 pl-1 md:pl-2">
             <p>
-              I’m a BSc Computer Science graduate (2026) focused on building scalable AI-powered and full-stack web applications that combine modern frontend experiences with efficient backend systems. My interests lie in Python development, AI integrations, intelligent automation, and creating real-world software solutions with clean architecture and performance-focused design.
+              I’m a B.Sc. Computer Science graduate (2026) and aspiring AI Backend Developer with a strong interest in building practical, intelligent, and user-focused applications. I enjoy combining backend development with modern AI technologies to solve real-world problems and turn ideas into useful solutions.
             </p>
             <p>
-              I have hands-on experience developing projects using React, FastAPI, Flask, machine learning models, REST APIs, and modern deployment platforms. I enjoy transforming ideas into functional products while continuously exploring emerging technologies such as LLMs, RAG systems, and AI-driven applications.
+              Through academic projects, internships, and online technical programs and challenges, I have gained hands-on experience developing and deploying AI-powered web applications. I’m particularly interested in AI application development, backend engineering, RAG-based systems, semantic search, and building reliable applications for real-world use.
             </p>
             <p>
-              Passionate about problem-solving, system design, and user-focused development, I aim to contribute to innovative teams building impactful and reliable software solutions.
+              Currently pursuing an online M.Sc. in Data Science at SASTRA University (2026–2028) alongside my career, and actively seeking full-time opportunities or internships where I can gain real industry experience, strengthen my practical skills, learn from experienced teams, and contribute to meaningful projects.
+            </p>
+            <p>
+              I’m open to opportunities in AI Application Development, AI Backend Development, and related software engineering roles where I can grow while creating impactful AI-powered solutions.
             </p>
           </div>
 

@@ -5,69 +5,64 @@ import {
   Code2, 
   Terminal, 
   Database, 
-  Globe, 
   Server, 
   Cpu, 
   Cloud, 
   Layers, 
   Binary,
   Sparkles,
-  Atom,
-  Flame,
-  Braces,
-  Wind,
-  Monitor,
-  Zap,
-  FlaskConical,
-  Shield,
   GitBranch,
   Github,
   Box,
-  Compass,
-  Smile,
   Boxes,
-  TableProperties,
-  GitFork,
-  Radio,
+  Shield,
   Brain,
   MessageSquare,
   Search,
   Command,
-  Hash
+  Hash,
+  GitFork,
+  Zap,
+  Users,
+  Send,
+  FlaskConical
 } from 'lucide-react';
 
 const getSkillIcon = (name: string) => {
   switch (name.toLowerCase()) {
     case 'python': return Terminal;
-    case 'javascript': return Braces;
     case 'sql': return Database;
-    case 'c/c++': return Binary;
-    case 'react js': return Atom;
-    case 'html5': return Code2;
-    case 'css3': return Sparkles;
-    case 'tailwind css': return Wind;
-    case 'responsive design': return Monitor;
-    case 'fastapi': return Zap;
-    case 'flask': return FlaskConical;
-    case 'django': return Shield;
-    case 'rest apis': return GitFork;
-    case 'websockets': return Radio;
-    case 'machine learning': return Brain;
-    case 'ai integrations': return Sparkles;
-    case 'llms': return MessageSquare;
+    case 'object-oriented programming (oop)': return Binary;
+    case 'llm integration': return MessageSquare;
     case 'rag': return Search;
     case 'prompt engineering': return Command;
-    case 'numpy': return Hash;
-    case 'pandas': return TableProperties;
-    case 'gcp': return Cloud;
-    case 'firebase': return Flame;
-    case 'postgresql': return Database;
-    case 'vector database': return Boxes;
+    case 'embeddings': return Hash;
+    case 'nlp': return MessageSquare;
+    case 'semantic search': return Search;
+    case 'fastapi': return Zap;
+    case 'rest apis': return GitFork;
+    case 'api integration': return GitFork;
+    case 'pydantic': return Shield;
+    case 'mysql': return Database;
+    case 'qdrant': return Boxes;
+    case 'database design': return Layers;
+    case 'sql queries': return Database;
     case 'git': return GitBranch;
     case 'github': return Github;
     case 'docker': return Box;
-    case 'google antigravity': return Compass;
-    case 'hugging face': return Smile;
+    case 'aws (ec2, s3)': return Cloud;
+    case 'aws': return Cloud;
+    case 'render': return Cloud;
+    case 'gemini ai': return Sparkles;
+    case 'hugging face': return Sparkles;
+    case 'google antigravity': return Cloud;
+    case 'llm apis': return MessageSquare;
+    case 'postman': return Send;
+    case 'pytest': return FlaskConical;
+    case 'problem solving': return Brain;
+    case 'analytical thinking': return Cpu;
+    case 'collaboration': return Users;
+    case 'continuous learning': return Sparkles;
     default: return Code2;
   }
 };
@@ -76,32 +71,32 @@ const getSkillIcon = (name: string) => {
 
 const categories = [
   {
-    title: 'Programming Languages',
-    description: 'Core syntax and foundations for systems, scripts, and algorithms.',
+    title: 'Programming',
+    description: 'Core foundations for building intelligent backend systems and algorithms.',
     icon: Terminal,
     color: 'border-neon/20 hover:border-neon',
     accentColor: 'text-neon',
     glowColor: 'from-neon/10 to-transparent',
     skills: [
       { name: 'Python' },
-      { name: 'JavaScript' },
       { name: 'SQL' },
-      { name: 'C/C++' }
+      { name: 'Object-Oriented Programming (OOP)' }
     ]
   },
   {
-    title: 'Frontend Development',
-    description: 'Crafting pixel-perfect, accessible, and responsive user interfaces.',
-    icon: Globe,
+    title: 'Generative AI',
+    description: 'Building LLM-powered systems, semantic retrieval, and NLP pipelines.',
+    icon: Sparkles,
     color: 'border-neon/20 hover:border-neon',
     accentColor: 'text-neon',
     glowColor: 'from-neon/10 to-transparent',
     skills: [
-      { name: 'React JS' },
-      { name: 'HTML5' },
-      { name: 'CSS3' },
-      { name: 'Tailwind CSS' },
-      { name: 'Responsive Design' }
+      { name: 'LLM Integration' },
+      { name: 'RAG' },
+      { name: 'Prompt Engineering' },
+      { name: 'Embeddings' },
+      { name: 'NLP' },
+      { name: 'Semantic Search' }
     ]
   },
   {
@@ -113,46 +108,30 @@ const categories = [
     glowColor: 'from-neon/10 to-transparent',
     skills: [
       { name: 'FastAPI' },
-      { name: 'Flask' },
-      { name: 'Django' },
       { name: 'REST APIs' },
-      { name: 'WebSockets' }
+      { name: 'API Integration' },
+      { name: 'Pydantic' }
     ]
   },
   {
-    title: 'AI & Machine Learning',
-    description: 'Integrating models, context generation engines, and smart behaviors.',
-    icon: Cpu,
-    color: 'border-neon/20 hover:border-neon',
-    accentColor: 'text-neon',
-    glowColor: 'from-neon/10 to-transparent',
-    skills: [
-      { name: 'Machine Learning' },
-      { name: 'AI Integrations' },
-      { name: 'LLMs' },
-      { name: 'RAG' },
-      { name: 'Prompt Engineering' },
-      { name: 'NumPy' },
-      { name: 'pandas' }
-    ]
-  },
-  {
-    title: 'Database & Cloud',
-    description: 'Managing structured datasets, persistent systems, and cloud instances.',
+    title: 'Databases & Cloud',
+    description: 'Managing structured and vector datasets, cloud hosting, and reliable query design.',
     icon: Database,
     color: 'border-neon/20 hover:border-neon',
     accentColor: 'text-neon',
     glowColor: 'from-neon/10 to-transparent',
     skills: [
-      { name: 'GCP' },
-      { name: 'Firebase' },
-      { name: 'PostgreSQL' },
-      { name: 'Vector Database' }
+      { name: 'MySQL' },
+      { name: 'Qdrant' },
+      { name: 'Database Design' },
+      { name: 'SQL Queries' },
+      { name: 'AWS' },
+      { name: 'Render' }
     ]
   },
   {
-    title: 'Tools & Platforms',
-    description: 'Ecosystem tools, container standards, and specialized AI environments.',
+    title: 'Tools & Testing',
+    description: 'Version control, containers, API testing, and automated test workflows.',
     icon: Layers,
     color: 'border-neon/20 hover:border-neon',
     accentColor: 'text-neon',
@@ -161,8 +140,26 @@ const categories = [
       { name: 'Git' },
       { name: 'GitHub' },
       { name: 'Docker' },
+      { name: 'Postman' },
+      { name: 'Pytest' },
+      { name: 'Gemini AI' },
+      { name: 'Hugging Face' },
       { name: 'Google Antigravity' },
-      { name: 'Hugging Face' }
+      { name: 'LLM APIs' }
+    ]
+  },
+  {
+    title: 'Professional Skills',
+    description: 'Collaboration and engineering habits for impactful team delivery.',
+    icon: Users,
+    color: 'border-neon/20 hover:border-neon',
+    accentColor: 'text-neon',
+    glowColor: 'from-neon/10 to-transparent',
+    skills: [
+      { name: 'Problem Solving' },
+      { name: 'Analytical Thinking' },
+      { name: 'Collaboration' },
+      { name: 'Continuous Learning' }
     ]
   }
 ];
@@ -204,12 +201,12 @@ export default function Skills() {
             <span>02 / TECHNICAL CAPABILITY</span>
           </div>
           
-          <h2 className="text-xl sm:text-3xl md:text-5xl font-sans font-extrabold tracking-tight text-soft-white leading-tight">
+          <h2 className="text-lg sm:text-xl md:text-3xl font-sans font-extrabold tracking-tight text-soft-white leading-tight">
             Technical <span className="bg-linear-to-r from-neon to-deep-green bg-clip-text text-transparent">Skills</span>
           </h2>
           
-          <p className="font-mono text-[10.5px] sm:text-xs md:text-sm text-soft-white/90 tracking-wide max-w-xl leading-relaxed">
-            Technologies, frameworks, and tools I use to build scalable full-stack and AI-powered applications.
+          <p className="font-mono text-[10.5px] sm:text-xs md:text-[13px] text-soft-white/90 tracking-wide max-w-xl leading-relaxed">
+            Technologies, frameworks, and tools I use to build scalable AI-powered backend applications.
           </p>
           
           <div className="h-0.5 w-16 sm:w-20 bg-linear-to-r from-neon to-transparent mt-1" />
@@ -320,7 +317,7 @@ export default function Skills() {
                 onTouchStart={() => setActiveCardId(category.title)}
                 onTouchEnd={() => setActiveCardId(null)}
                 onTouchCancel={() => setActiveCardId(null)}
-                className={`w-full max-w-full bg-[#0d0d0d]/90 backdrop-blur-md rounded-2xl p-4 sm:p-6 md:p-8 xl:p-10 border ${category.color} relative overflow-hidden flex flex-col justify-between glow-card ${isActive ? 'is-active-glow border-neon/60 shadow-[0_0_25px_rgba(0,255,156,0.12)]' : ''}`}
+                className={`w-full max-w-full bg-[#0d0d0d]/90 backdrop-blur-md rounded-2xl p-4 sm:p-4 md:p-5 border ${category.color} relative overflow-hidden flex flex-col justify-between glow-card ${isActive ? 'is-active-glow border-neon/60 shadow-[0_0_25px_rgba(0,255,156,0.12)]' : ''}`}
                 style={{ 
                   willChange: "transform, opacity, border-color, box-shadow, background-color", 
                   transform: isActive ? "scale(0.98) translate3d(0,0,0)" : "translate3d(0,0,0)",

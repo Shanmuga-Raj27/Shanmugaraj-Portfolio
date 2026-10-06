@@ -33,7 +33,7 @@ export default function Hero() {
 
   return (
     <section id="hero" className="relative w-full flex items-center justify-center pt-[120px] pb-[60px] px-4 sm:px-6 md:px-12 z-10 overflow-hidden gpu-stable">
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
+      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
         
         {/* Left Column: Bio and CTA Buttons inside dedicated premium card/wrapper */}
         <motion.div 
@@ -41,7 +41,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
           style={{ willChange: "transform, opacity" }}
-          className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-5 md:space-y-8 p-6 sm:p-10 hero-glass-card gpu-stable"
+          className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-5 md:space-y-8 p-4 sm:p-6 hero-glass-card gpu-stable"
         >
           {/* Greeting Tag */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-neon/10 border border-neon/20 text-[10px] sm:text-xs font-mono font-medium text-neon tracking-wider uppercase animate-pulse">
@@ -51,13 +51,13 @@ export default function Hero() {
 
           {/* Name Display */}
           <div className="space-y-2">
-            <span className="font-mono text-[10px] sm:text-xs md:text-sm text-platinum tracking-[0.2em] sm:tracking-[0.25em] uppercase block">
+            <span className="font-mono text-[10px] sm:text-xs md:text-[13px] text-platinum tracking-[0.2em] sm:tracking-[0.25em] uppercase block">
               Hello World, I am
             </span>
             <h1 
               className="font-sans font-bold text-soft-white tracking-tight text-center lg:text-left"
               style={{
-                fontSize: 'clamp(2.3rem, 7vw, 4.5rem)',
+                fontSize: 'clamp(1.6rem, 5vw, 2.9rem)',
                 lineHeight: '1.05',
                 letterSpacing: '-0.03em'
               }}
@@ -68,14 +68,14 @@ export default function Hero() {
 
           {/* Animated Glowing Gradient text for Role */}
           <div className="relative">
-            <h2 className="text-base sm:text-2xl md:text-4xl font-mono font-bold tracking-tight bg-linear-to-r from-neon via-deep-green to-neon bg-size-[200%_auto] bg-clip-text text-transparent animate-[shimmer_5s_infinite_linear] inline-block glow-neon-text leading-tight">
-              Python Full Stack & AI Developer
+            <h2 className="text-xs sm:text-lg md:text-2xl font-mono font-bold tracking-tight bg-linear-to-r from-neon via-deep-green to-neon bg-size-[200%_auto] bg-clip-text text-transparent animate-[shimmer_5s_infinite_linear] inline-block glow-neon-text leading-tight">
+              AI Backend Developer
             </h2>
           </div>
 
           {/* Tagline Description */}
-          <p className="text-platinum text-xs sm:text-base md:text-lg max-w-xl font-sans font-light leading-relaxed">
-            Building scalable AI-powered web applications with modern frontend experiences, robust backend architectures, and intelligent automation workflows.
+          <p className="text-platinum text-[11px] sm:text-xs md:text-sm max-w-xl font-sans font-light leading-relaxed">
+            Building practical, intelligent, and user-focused AI applications with robust backend architectures, RAG-based systems, and reliable real-world automation.
           </p>
 
           {/* CTA & Actions Block */}
@@ -150,7 +150,7 @@ export default function Hero() {
             {!imageFailed ? (
               <img
                 src={imageSources[imageIndex]}
-                alt="Shanmugaraj Rajkumar - Python Full Stack & AI Developer"
+                alt="Shanmugaraj Rajkumar - AI Backend Developer"
                 referrerPolicy="no-referrer"
                 onError={handleImageError}
                 className="w-full h-full object-cover rounded-full relative z-20 transition-transform duration-500 group-hover:scale-105"
@@ -162,7 +162,7 @@ export default function Hero() {
                   <Brain size={32} />
                 </div>
                 <span className="font-mono text-xs tracking-widest text-soft-white uppercase font-bold text-center">SHANMUGARAJ RAJKUMAR</span>
-                <span className="font-mono text-[9px] tracking-wider text-muted-gray mt-1 block">AI & FULL STACK DEVELOPER</span>
+                <span className="font-mono text-[9px] tracking-wider text-muted-gray mt-1 block">AI BACKEND DEVELOPER</span>
                 <span className="font-sans text-[10px] text-neon/70 mt-3 border border-neon/30 px-2 py-0.5 rounded-full bg-neon/5 uppercase tracking-wider font-semibold">active_node_</span>
               </div>
             )}
@@ -199,8 +199,8 @@ export default function Hero() {
             transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 1 }}
             className="hidden sm:flex absolute top-[20%] right-[0%] md:right-[5%] z-20 items-center gap-2 px-3.5 py-2 rounded-xl bg-[#0d0d0d]/80 backdrop-blur-md border border-white/5 hover:border-neon/30 shadow-lg cursor-default"
           >
-            <div className="w-2 h-2 rounded-full bg-cyan-400" />
-            <span className="font-mono text-xs text-soft-white font-medium">React</span>
+            <div className="w-2 h-2 rounded-full bg-amber-400" />
+            <span className="font-mono text-xs text-soft-white font-medium">MySQL</span>
           </motion.div>
 
           {/* LLMs floating badge */}

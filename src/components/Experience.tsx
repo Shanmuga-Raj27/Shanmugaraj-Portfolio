@@ -19,18 +19,18 @@ import {
 const experiences = [
   {
     type: 'hackathon',
-    title: 'Full-Stack Developer',
-    organization: 'Google PromptWar Hackathon (Virtual)',
+    title: 'Gen AI Developer',
+    organization: 'Google PromptWars Virtual Program',
     period: 'Apr 2026',
     accentColor: 'border-neon/30 text-neon',
-    badgeText: 'Hackathon Competitor',
+    badgeText: 'Virtual Program',
     badgeColor: 'bg-neon/10 text-neon border-neon/20',
     icon: Terminal,
-    desc: 'Collaborated during the intense virtual Google hackathon to engineer state-of-the-art developer solutions utilizing generative AI pipelines.',
+    desc: 'Participated in the Google PromptWars virtual program as a Gen AI Developer, building generative AI solutions with AI-assisted workflows and prompt engineering.',
     points: [
       'Developed software applications using Google Antigravity with AI-assisted workflows and prompt engineering.',
       'Built FastAPI backend APIs and real-time application workflows for scalable feature integration.',
-      'Collaborated in software development, debugging, and feature implementation during the Google PromptWar Hackathon.'
+      'Collaborated in software development, debugging, and feature implementation during the Google PromptWars virtual program.'
     ],
     tech: ['Google Antigravity', 'FastAPI', 'Python', 'Prompt Engineering'],
     indicator: {
@@ -41,20 +41,19 @@ const experiences = [
   },
   {
     type: 'internship',
-    title: 'AI/ML Data Analytics Intern',
+    title: 'AI/ML Intern',
     organization: 'Edunet Foundation (AICTE & Shell)',
     period: 'Jun 2025 – Jul 2025',
     accentColor: 'border-[#FF3B3B]/30 text-[#FF3B3B]',
     badgeText: 'Technical Internship',
     badgeColor: 'bg-[#FF3B3B]/10 text-[#FF3B3B] border-[#FF3B3B]/20',
     icon: Brain,
-    desc: 'Underwent an intensive cloud and machine learning professional curriculum, building end-to-end classification deep neural nets.',
+    desc: 'Completed industry-aligned training in AI/ML, data analytics, and software development lifecycle concepts, strengthening Python programming, debugging, and problem-solving skills.',
     points: [
-      'Learned AI/ML concepts including machine learning, transfer learning, model fine-tuning, and optimization techniques.',
-      'Developed a Garbage Classification application using deep learning models and FastAPI-based prediction APIs.',
-      'Collaborated in an Agile development environment with focus on debugging and software quality.'
+      'Completed industry-aligned training in AI/ML, data analytics, and software development lifecycle concepts, strengthening Python programming, debugging, and problem-solving skills.',
+      'Prototyped an AI-powered Garbage Classification application using Python, FastAPI, and Scikit-learn, achieving over 90% validation accuracy through EfficientNetV2-B2 transfer learning.'
     ],
-    tech: ['Deep Learning', 'FastAPI', 'AI/ML Analytics', 'Agile Scrum'],
+    tech: ['Python', 'FastAPI', 'Scikit-learn', 'EfficientNetV2-B2'],
     indicator: {
       label: 'Deep Learning Model',
       status: 'Dense CNN',
@@ -102,11 +101,11 @@ export default function Experience() {
             <span>03 / MILESTONES & ROADMAP</span>
           </div>
           
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-sans font-extrabold tracking-tight text-soft-white leading-tight">
+          <h2 className="text-lg sm:text-xl md:text-3xl font-sans font-extrabold tracking-tight text-soft-white leading-tight">
             Experience & <span className="bg-linear-to-r from-accent-red to-neon bg-clip-text text-transparent">Achievements</span>
           </h2>
           
-          <p className="font-mono text-[11px] sm:text-xs md:text-sm text-soft-white tracking-wide max-w-xl leading-relaxed">
+          <p className="font-mono text-[11px] sm:text-xs md:text-[13px] text-soft-white tracking-wide max-w-xl leading-relaxed">
             Hands-on experience building AI-powered applications, scalable backend systems, and modern software solutions.
           </p>
           
@@ -153,7 +152,7 @@ export default function Experience() {
                     onTouchStart={() => setActiveCardId(exp.organization)}
                     onTouchEnd={() => setActiveCardId(null)}
                     onTouchCancel={() => setActiveCardId(null)}
-                    className={`bg-zinc-900/95 backdrop-blur-md rounded-2xl p-4 sm:p-6 md:p-8 border ${exp.accentColor} glow-card ${isActive ? `is-active-glow ${exp.type === 'internship' ? 'red' : ''}` : ''}`}
+                    className={`bg-zinc-900/95 backdrop-blur-md rounded-2xl p-4 sm:p-6 md:p-6 border ${exp.accentColor} glow-card ${isActive ? `is-active-glow ${exp.type === 'internship' ? 'red' : ''}` : ''}`}
                   >
                     
                     {/* Header Row */}
@@ -188,7 +187,7 @@ export default function Experience() {
                       {exp.points.map((point, pIdx) => (
                         <li 
                           key={pIdx} 
-                          className="flex items-start gap-2.5 text-xs sm:text-sm lg:text-[15px] text-platinum font-sans font-light leading-relaxed"
+                          className="flex items-start gap-2.5 text-xs sm:text-sm lg:text-[14px] text-platinum font-sans font-light leading-relaxed"
                         >
                           <CheckCircle2 size={14} className="text-neon mt-0.5 shrink-0" />
                           <span>{point}</span>

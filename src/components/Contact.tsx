@@ -125,11 +125,11 @@ export default function Contact() {
             <span>05 / COLLABORATION GATEWAY</span>
           </div>
           
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-sans font-extrabold tracking-tight text-soft-white leading-tight">
+          <h2 className="text-lg sm:text-xl md:text-3xl font-sans font-extrabold tracking-tight text-soft-white leading-tight">
             Contact <span className="bg-linear-to-r from-neon to-[#00b36c] bg-clip-text text-transparent">Me</span>
           </h2>
           
-          <p className="font-mono text-[11px] sm:text-xs md:text-sm text-soft-white tracking-wide max-w-xl leading-relaxed">
+          <p className="font-mono text-[11px] sm:text-xs md:text-[13px] text-soft-white tracking-wide max-w-xl leading-relaxed">
             Open to internships, freelance opportunities, collaborations, and full-time software engineering roles.
           </p>
           

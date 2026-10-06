@@ -19,17 +19,65 @@ import {
   Code2, 
   Terminal,
   Server,
-  Database
+  Database,
 } from 'lucide-react';
 
 const projects = [
+  {
+    id: 'pkb',
+    title: 'Personal Knowledge Base',
+    liveLink: '',
+    githubLink: 'https://github.com/Shanmuga-Raj27/Personal_Knowledge_Base',
+    category: 'AI-Powered RAG',
+    description: 'A Personal Knowledge Base that helps users organize documents and find information through AI-powered semantic search and conversational queries using FastAPI.',
+    features: [
+      { text: 'RAG pipeline with Gemini processing docs from AWS S3', icon: Bot },
+      { text: 'Grounded answers via MySQL and Qdrant with user data isolation', icon: Database },
+      { text: 'Redis caching for fast semantic retrieval', icon: Layers },
+      { text: '7-step JWT verification and pytest smoke tests', icon: Lock },
+      { text: 'Deployed on AWS EC2', icon: Cloud }
+    ],
+    tech: [
+      { name: 'Python', icon: Terminal },
+      { name: 'FastAPI', icon: Server },
+      { name: 'React MUI', icon: Code2 },
+      { name: 'Gemini AI', icon: Sparkles },
+      { name: 'Redis', icon: Layers },
+      { name: 'MySQL', icon: Database },
+      { name: 'Qdrant', icon: Database },
+      { name: 'AWS', icon: Cloud }
+    ],
+    accentGlow: 'from-neon/10 to-transparent'
+  },
+  {
+    id: 'garbage',
+    title: 'Garbage Classification',
+    liveLink: 'https://garbage-classification-frontend.netlify.app',
+    githubLink: 'https://github.com/Shanmuga-Raj27/AICTE-internship-Garbage-Classification',
+    category: 'Machine Learning',
+    description: 'An AI-powered image classification system for real-time waste identification and automated waste categorization.',
+    features: [
+      { text: 'Real-time waste categorization', icon: ImageIcon },
+      { text: 'EfficientNetV2-B2 transfer learning model', icon: Cpu },
+      { text: 'FastAPI backend and React frontend end-to-end predictions', icon: Server },
+      { text: 'Over 90% validation accuracy', icon: Gauge },
+      { text: 'Dockerized and deployed on Hugging Face Spaces', icon: Sparkles }
+    ],
+    tech: [
+      { name: 'Python', icon: Terminal },
+      { name: 'FastAPI', icon: Server },
+      { name: 'React', icon: Code2 },
+      { name: 'Scikit-learn', icon: Cpu },
+      { name: 'Docker', icon: Layers }
+    ],
+    accentGlow: 'from-neon/5 to-transparent'
+  },
   {
     id: 'neic',
     title: 'National Election Information Companion (NEIC)',
     liveLink: 'https://neic-project.web.app/',
     githubLink: 'https://github.com/Shanmuga-Raj27/Election_process',
-    category: 'AI & Full-Stack',
-    image: '/neic.webp',
+    category: 'AI & Backend',
     description: 'An AI-powered civic information platform designed to simplify public access to election-related information through multilingual chatbot guidance and scalable backend services.',
     features: [
       { text: 'AI-powered chatbot integration', icon: Bot },
@@ -37,66 +85,14 @@ const projects = [
       { text: 'Gemini API integration', icon: Sparkles },
       { text: 'FastAPI backend services', icon: Server },
       { text: 'REST API architecture', icon: Workflow },
-      { text: 'Google Cloud deployment', icon: Cloud }
+      { text: 'Render deployment', icon: Cloud }
     ],
     tech: [
       { name: 'React.js', icon: Code2 },
       { name: 'FastAPI', icon: Server },
       { name: 'Gemini API', icon: Sparkles },
-      { name: 'GCP', icon: Cloud },
+      { name: 'Render', icon: Cloud },
       { name: 'REST APIs', icon: Workflow }
-    ],
-    accentGlow: 'from-neon/10 to-transparent'
-  },
-  {
-    id: 'garbage',
-    title: 'Garbage Classification AI',
-    liveLink: 'https://garbage-classification-frontend.netlify.app',
-    githubLink: 'https://github.com/Shanmuga-Raj27/AICTE-internship-Garbage-Classification',
-    category: 'Machine Learning',
-    image: '/garbage.webp',
-    description: 'An AI-powered waste classification platform using deep learning and real-time image prediction workflows for intelligent garbage detection and classification.',
-    features: [
-      { text: 'Real-time image classification', icon: ImageIcon },
-      { text: 'Deep learning model integration', icon: Cpu },
-      { text: '90% model accuracy benchmark', icon: Gauge },
-      { text: 'REST prediction APIs', icon: Workflow },
-      { text: 'Docker containerization', icon: Layers },
-      { text: 'Hugging Face integration', icon: Sparkles }
-    ],
-    tech: [
-      { name: 'React.js', icon: Code2 },
-      { name: 'FastAPI', icon: Server },
-      { name: 'TensorFlow', icon: Cpu },
-      { name: 'NumPy', icon: Binary },
-      { name: 'Pandas', icon: Database },
-      { name: 'Docker', icon: Layers },
-      { name: 'Hugging Face', icon: Sparkles }
-    ],
-    accentGlow: 'from-neon/5 to-transparent'
-  },
-  {
-    id: 'stadium',
-    title: 'Nexus Stadium Real-Time App',
-    liveLink: 'https://google-stadium-app.onrender.com',
-    githubLink: 'https://github.com/Shanmuga-Raj27/Google-Stadium-',
-    category: 'Backend & WebSockets',
-    image: '/stadium.webp',
-    description: 'A scalable real-time application built with FastAPI and WebSockets focused on backend optimization, secure APIs, and operational workflow management.',
-    features: [
-      { text: 'Real-time order tracking', icon: Activity },
-      { text: 'WebSocket subscription pipeline', icon: Radio },
-      { text: 'Role-based access control', icon: Lock },
-      { text: 'SQL query optimization', icon: Database },
-      { text: 'Backend performance tuning', icon: Gauge },
-      { text: 'Scalable FastAPI state architecture', icon: Server }
-    ],
-    tech: [
-      { name: 'FastAPI', icon: Server },
-      { name: 'WebSockets', icon: Radio },
-      { name: 'SQL', icon: Database },
-      { name: 'REST APIs', icon: Workflow },
-      { name: 'Python', icon: Terminal }
     ],
     accentGlow: 'from-neon/10 to-transparent'
   }
@@ -139,12 +135,12 @@ export default function Projects() {
             <span>04 / INTELLECTUAL IP & REPOS</span>
           </div>
           
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-sans font-extrabold tracking-tight text-soft-white select-none leading-tight">
+          <h2 className="text-lg sm:text-xl md:text-3xl font-sans font-extrabold tracking-tight text-soft-white select-none leading-tight">
             Featured <span className="bg-linear-to-r from-[#00ff9c] to-[#00b36c] bg-clip-text text-transparent">Projects</span>
           </h2>
           
-          <p className="font-mono text-[11px] sm:text-xs md:text-sm text-soft-white tracking-wide max-w-2xl leading-relaxed">
-            Real-world AI-powered and full-stack applications focused on scalability, backend engineering, intelligent automation, and modern user experiences.
+          <p className="font-mono text-[11px] sm:text-xs md:text-[13px] text-soft-white tracking-wide max-w-2xl leading-relaxed">
+            Real-world AI-powered backend applications focused on scalability, backend engineering, intelligent automation, and modern user experiences.
           </p>
           
           <div className="h-0.5 w-20 bg-linear-to-r from-neon to-transparent mt-1" />
@@ -152,7 +148,7 @@ export default function Projects() {
 
         {/* Project cards responsive matching grid/stack layout */}
         <motion.div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6 lg:gap-10 w-full"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6 lg:gap-6 w-full"
         >
           <AnimatePresence mode="popLayout">
             {projects.map((project) => {
@@ -173,7 +169,7 @@ export default function Projects() {
                   onTouchStart={() => setActiveCardId(project.id)}
                   onTouchEnd={() => setActiveCardId(null)}
                   onTouchCancel={() => setActiveCardId(null)}
-                  className={`bg-zinc-900/95 backdrop-blur-md rounded-2xl p-5 sm:p-6 md:p-8 border flex flex-col lg:flex-row gap-6 lg:gap-8 relative overflow-hidden transition-all duration-300 glow-card ${
+                  className={`bg-zinc-900/95 backdrop-blur-md rounded-2xl p-5 sm:p-6 md:p-6 border flex flex-col lg:flex-col gap-6 relative overflow-hidden transition-all duration-300 glow-card ${
                     isActive 
                       ? 'is-active-glow border-neon/60 shadow-[0_0_25px_rgba(0,255,156,0.12)] bg-zinc-900/90' 
                       : 'border-neon/20'
@@ -194,17 +190,6 @@ export default function Projects() {
                     }`} 
                   />
 
-                  {/* Left Side: Mockup Image (Optimized cinematic wide aspect ratio on desktop) */}
-                  <div className="w-full lg:w-[420px] xl:w-[460px] shrink-0 rounded-xl overflow-hidden border border-white/5 group-hover:border-neon/30 transition-all duration-500 relative aspect-video lg:aspect-2.5/1 bg-zinc-950">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                    />
-                    <div className="absolute inset-0 bg-radial-gradient from-transparent to-matte/60 opacity-60 pointer-events-none" />
-                  </div>
-
                   {/* Right Side: Text & Capabilities Content */}
                   <div className="flex-1 flex flex-col justify-between relative z-10">
                     <div>
@@ -213,7 +198,31 @@ export default function Projects() {
                         <span className="px-2.5 py-1 text-[10px] lg:text-xs font-mono font-semibold uppercase tracking-wider bg-neon/10 border border-neon/20 text-neon rounded-md">
                           {project.category}
                         </span>
-                        <Terminal size={14} className="text-neon/35 group-hover:text-neon transition-colors duration-300" />
+                        <div className="flex items-center justify-end gap-2.5">
+                      {project.liveLink && (
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 md:flex-none md:px-6 inline-flex items-center justify-center gap-1.5 px-3 py-3 sm:py-2.5 rounded-xl bg-white text-zinc-900 font-mono text-[11px] uppercase tracking-wider font-bold hover:bg-neon hover:text-zinc-950 active:scale-98 transition-all duration-300"
+                      >
+                        <ExternalLink size={12} />
+                        <span>Live Demo</span>
+                      </a>
+                      )}
+                      
+                      {project.githubLink && (
+                      <a
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-1.5 px-3.5 py-3 sm:py-2.5 rounded-xl bg-zinc-900/80 border border-white/10 text-soft-white hover:border-neon hover:text-neon hover:bg-neon/5 active:scale-98 transition-all duration-300"
+                        title="View GitHub Repository"
+                      >
+                        <Github size={14} />
+                      </a>
+                      )}
+                    </div>
                       </div>
 
                       <h3 className="text-xl lg:text-2xl font-sans font-extrabold text-soft-white tracking-tight leading-snug group-hover:text-neon transition-colors duration-300 relative z-10">
@@ -267,28 +276,7 @@ export default function Projects() {
                       </div>
                     </div>
 
-                    {/* Buttons with Modern styling */}
-                    <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 relative z-10 pt-2 border-t border-white/5 md:border-t-0 md:pt-0">
-                      <a
-                        href={project.liveLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 md:flex-none md:px-6 inline-flex items-center justify-center gap-1.5 px-3 py-3 sm:py-2.5 rounded-xl bg-white text-zinc-900 font-mono text-[11px] uppercase tracking-wider font-bold hover:bg-neon hover:text-zinc-950 active:scale-98 transition-all duration-300"
-                      >
-                        <ExternalLink size={12} />
-                        <span>Live Demo</span>
-                      </a>
-                      
-                      <a
-                        href={project.githubLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-1.5 px-3.5 py-3 sm:py-2.5 rounded-xl bg-zinc-900/80 border border-white/10 text-soft-white hover:border-neon hover:text-neon hover:bg-neon/5 active:scale-98 transition-all duration-300"
-                        title="View GitHub Repository"
-                      >
-                        <Github size={14} />
-                      </a>
-                    </div>
+
                   </div>
 
                 </motion.div>

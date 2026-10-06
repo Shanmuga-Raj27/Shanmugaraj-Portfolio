@@ -12,9 +12,7 @@ import {
   SiNumpy,
   SiPandas,
   SiPostgresql,
-  SiFirebase,
   SiSupabase,
-  SiGooglecloud,
   SiGit,
   SiGithub,
   SiDocker,
@@ -123,41 +121,6 @@ export const GoogleAntigravityIcon = (className = "w-6 h-6") => (
 // row1Techs - 12 highly premium, brand-accurate technologies (Frontend & Core backend / cloud)
 export const row1Techs: TechItem[] = [
   {
-    name: 'React',
-    category: 'Frontend',
-    color: 'hover:border-[#61DAFB]/40 hover:shadow-[0_0_15px_rgba(97,218,251,0.25)]',
-    glowColor: 'rgba(97, 218, 251, 0.08)',
-    icon: <span className="text-[#61DAFB] flex items-center justify-center"><SiReact size={24} /></span>
-  },
-  {
-    name: 'JavaScript',
-    category: 'Programming',
-    color: 'hover:border-[#F7DF1E]/40 hover:shadow-[0_0_15px_rgba(247,223,30,0.25)]',
-    glowColor: 'rgba(247, 223, 30, 0.08)',
-    icon: <span className="text-[#F7DF1E] bg-[#000000] rounded-sm p-[1px] flex items-center justify-center"><SiJavascript size={22} /></span>
-  },
-  {
-    name: 'HTML5',
-    category: 'Frontend',
-    color: 'hover:border-[#E34F26]/40 hover:shadow-[0_0_15px_rgba(227,79,38,0.25)]',
-    glowColor: 'rgba(227, 79, 38, 0.08)',
-    icon: <span className="text-[#E34F26] flex items-center justify-center"><SiHtml5 size={24} /></span>
-  },
-  {
-    name: 'CSS3',
-    category: 'Frontend',
-    color: 'hover:border-[#1572B6]/40 hover:shadow-[0_0_15px_rgba(21,114,182,0.25)]',
-    glowColor: 'rgba(21, 114, 182, 0.08)',
-    icon: <span className="text-[#1572B6] flex items-center justify-center"><SiCss3 size={24} /></span>
-  },
-  {
-    name: 'Tailwind CSS',
-    category: 'Frontend',
-    color: 'hover:border-[#06B6D4]/40 hover:shadow-[0_0_15px_rgba(6,182,212,0.25)]',
-    glowColor: 'rgba(6, 182, 212, 0.08)',
-    icon: <span className="text-[#06B6D4] flex items-center justify-center"><SiTailwindcss size={24} /></span>
-  },
-  {
     name: 'Python',
     category: 'Programming',
     color: 'hover:border-[#3776AB]/40 hover:shadow-[0_0_15px_rgba(55,118,171,0.25)]',
@@ -199,13 +162,6 @@ export const row1Techs: TechItem[] = [
     glowColor: 'rgba(244, 63, 150, 0.08)',
     icon: RestApiIcon()
   },
-  {
-    name: 'Google Cloud',
-    category: 'Cloud',
-    color: 'hover:border-[#4285F4]/40 hover:shadow-[0_0_15px_rgba(66,133,244,0.25)]',
-    glowColor: 'rgba(66, 133, 244, 0.08)',
-    icon: <span className="text-[#4285F4] flex items-center justify-center"><SiGooglecloud size={24} /></span>
-  }
 ];
 
 // row2Techs - 15 technologies (AI, Databases, Platforms, and Tools)
@@ -258,13 +214,6 @@ export const row2Techs: TechItem[] = [
     color: 'hover:border-[#3ECF8E]/40 hover:shadow-[0_0_15px_rgba(62,207,142,0.25)]',
     glowColor: 'rgba(62, 207, 142, 0.08)',
     icon: <span className="text-[#3ECF8E] flex items-center justify-center"><SiSupabase size={24} /></span>
-  },
-  {
-    name: 'Firebase',
-    category: 'Database',
-    color: 'hover:border-[#FFCA28]/40 hover:shadow-[0_0_15px_rgba(255,202,40,0.25)]',
-    glowColor: 'rgba(255, 202, 40, 0.08)',
-    icon: <span className="text-[#FFCA28] flex items-center justify-center"><SiFirebase size={24} /></span>
   },
   {
     name: 'Antigravity',
@@ -334,8 +283,6 @@ export function getOfficialTechIcon(name: string): React.ReactNode {
   if (norm === 'websockets' || norm === 'websocket') return WebSocketsIcon("w-4 h-4");
   if (norm === 'rest apis' || norm === 'rest api' || norm === 'apis') return RestApiIcon("w-4 h-4");
   
-  if (norm === 'gcp' || norm === 'google cloud' || norm === 'google cloud platform') return <span className="text-[#4285F4] flex items-center justify-center"><SiGooglecloud size={16} /></span>;
-  if (norm === 'firebase') return <span className="text-[#FFCA28] flex items-center justify-center"><SiFirebase size={16} /></span>;
   if (norm === 'supabase') return <span className="text-[#3ECF8E] flex items-center justify-center"><SiSupabase size={16} /></span>;
   if (norm === 'postgresql' || norm === 'postgres') return <span className="text-[#336791] flex items-center justify-center"><SiPostgresql size={16} /></span>;
   
